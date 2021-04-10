@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ButtonIcon = styled.button`
     display: block;
@@ -11,6 +11,17 @@ const ButtonIcon = styled.button`
     background-position: 50% 50%;
     background-size: 60%;
     border: none;
+    ${({ logout }) => logout && css`
+      background-color: transparent;
+      width: 86px;
+      height: 64px;
+      margin: 0 29px;
+      @media only screen and (max-width: 820px) {
+        width: 70px;
+        height: 53px;
+    }
+    `}
+
 `;
 
 export default ButtonIcon;
