@@ -14,16 +14,18 @@ const TextWrapper = styled.div`
         margin: 15px 0;
     }
 `;
-const StyledBackground = styled.div`
+const StyledBackground = styled.img`
     position: absolute;
-    background: url(${Background});
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    height: auto;
     background-repeat: no-repeat;
     background-size: cover;
-    bottom: -200px;
+    bottom: 0;
     background-size: 100%;
     z-index: -5;
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
 `;
 const StyledIllustration = styled.img`
     position: absolute;
@@ -83,7 +85,6 @@ const Home = () => (
     <StyledWrapper>
         <TextWrapper>
             <StyledParagraph>Web application created to help You <Break/> taking care of your plants.</StyledParagraph>
-            {/* <StyledParagraph>taking care of your plants.</StyledParagraph> */}
         </TextWrapper>
         <TextWrapper>
             <StyledParagraph grey>Make helpful fishcards</StyledParagraph>
@@ -93,7 +94,7 @@ const Home = () => (
             <StyledLink>LOG IN</StyledLink>
         </TextWrapper>
         <StyledIllustration src={Girl} />
-        <StyledBackground />
+        <StyledBackground src={Background}/>
     </StyledWrapper>
 );
 

@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 62.5%;  
     }
     body {
-        overflow: hidden;
+        overflow-x: hidden;
         font-size: 1.6rem;
         font-family: 'Montserrat', 'sans-serif';
         margin: 0;
