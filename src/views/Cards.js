@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Heading from 'components/atoms/Heading/Heading';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
+import Card from 'components/molecules/Card/Card';
 import Icon from 'assets/icons/leaves.svg';
 import cat from 'assets/illustration/cat.svg';
 
@@ -38,14 +39,15 @@ const StyledParagraph = styled(Paragraph)`
 `;
 const StyledImage = styled.img`
     position: absolute;
-    width: 450px;
+    width: 28%;
+    height: auto;
     bottom: 5px;
     right: 20px;
 `;
 const Cards = () => (
     <StyledWrapper>
         <Column>
-            <Heading>Column1</Heading>
+            <Card />
         </Column>
         <Column>
             <Heading>Column2</Heading>
