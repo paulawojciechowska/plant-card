@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import plant from 'assets/img/pilea-peperomioides.jpg';
+import PropTypes from 'prop-types';
 
 const StyledWrapper = styled.div`
     width: 332px;
@@ -10,9 +10,19 @@ const StyledWrapper = styled.div`
     align-items: center;
     justify-content: space-around;
     padding: 5px;
-    -webkit-box-shadow: 5px 5px 5px 0px #BCBCBC;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow: 5px 5px 5px 0px #BCBCBC;  /* Firefox 3.5 - 3.6 */
-     box-shadow: 5px 5px 5px 0px #BCBCBC;
+    margin: 60px 70px;
+    -webkit-box-shadow: 5px 5px 10px 0 #BCBCBC;
+    -moz-box-shadow: 5px 5px 10px 0 #BCBCBC;
+     box-shadow: 5px 5px 10px 0 #BCBCBC;
+     @media only screen and (max-width: 1480px) {
+        margin: 60px 40px;
+    }
+    @media only screen and (max-width: 1300px) {
+        margin: 60px 20px;
+    }
+    @media only screen and (max-width: 900px) {
+        margin: 20px 20px;
+    }
 `;
 
 const StyledImage = styled.img`
@@ -46,15 +56,22 @@ const StyledParagraph = styled.p`
     `}
 `;
 
-const Card = () => (
+const Card = ({ image, name, level, date}) => (
     <StyledWrapper>
-        <StyledImage src={plant} />
+        <StyledImage src={image} />
         <InnerWrapper>
-            <StyledParagraph title>Pieniążek</StyledParagraph>
-            <StyledParagraph level>medium</StyledParagraph>
-            <StyledParagraph date>15/06/2019</StyledParagraph>
+            <StyledParagraph title>{name}</StyledParagraph>
+            <StyledParagraph level>{level}</StyledParagraph>
+            <StyledParagraph date>{date}</StyledParagraph>
         </InnerWrapper>
     </StyledWrapper>
 );
 
+Card.propTypes = {
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    level: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+
+}
 export default Card;

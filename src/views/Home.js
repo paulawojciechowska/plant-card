@@ -23,7 +23,7 @@ const StyledBackground = styled.img`
     bottom: 0;
     background-size: 100%;
     z-index: -5;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 914px) {
         display: none;
     }
 `;
@@ -46,16 +46,16 @@ const StyledIllustration = styled.img`
         right: 50px;
         bottom: 15px;
     }
-    @media only screen and (max-width: 820px) {
+    @media only screen and (max-width: 914px) {
         width: 550px;
         height: 550px;
         right: 5px;
         bottom: 50px;
-        position: relative;
-        display: inline-block;
+        /* position: relative;
+        display: inline-block; */
         margin: auto;
     }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 650px) {
         width: 490px;
         height: 490px;
     } 
