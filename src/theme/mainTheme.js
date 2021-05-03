@@ -1,8 +1,8 @@
 export const theme = {
     green: 'hsl(92, 33%, 56%)',
-    bue: 'hsl(92, 33%, 56%)',
-    red: 'hsl(344, 87%, 46%)',
-    yellow: 'hsl(49, 100%, 81%)',
+    easy: 'hsl(193, 46%, 52%)',
+    hard: 'hsl(344, 87%, 46%)',
+    mid: 'hsl(49, 100%, 56%)',
     greyD: 'hsl(0, 0%, 74%)',
     greyL: 'hsl(0, 0%, 90%)',
     black: 'hsl(0, 0%, 0%)',

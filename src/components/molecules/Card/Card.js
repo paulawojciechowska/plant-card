@@ -14,7 +14,7 @@ const StyledWrapper = styled.div`
     -webkit-box-shadow: 5px 5px 10px 0 #BCBCBC;
     -moz-box-shadow: 5px 5px 10px 0 #BCBCBC;
      box-shadow: 5px 5px 10px 0 #BCBCBC;
-     @media only screen and (max-width: 1480px) {
+    @media only screen and (max-width: 1480px) {
         margin: 60px 40px;
     }
     @media only screen and (max-width: 1300px) {
@@ -28,6 +28,7 @@ const StyledWrapper = styled.div`
 const StyledImage = styled.img`
     width: 120px;
     height: 120px;
+    object-fit: cover;
     border-radius: 25px;
 `;
 const InnerWrapper = styled.div`
@@ -46,13 +47,13 @@ const StyledParagraph = styled.p`
     ${({level}) =>
     level &&
     css`
-        color: ${({theme}) => theme.yellow};
+        color: ${({activeColor, theme}) => theme[activeColor]};
         text-transform: uppercase;
     `}
     ${({date}) =>
     date &&
     css`
-        color: ${({theme}) => theme.greyL};
+        color: ${({theme}) => theme.greyD};
     `}
 `;
 
@@ -61,7 +62,7 @@ const Card = ({ image, name, level, date}) => (
         <StyledImage src={image} />
         <InnerWrapper>
             <StyledParagraph title>{name}</StyledParagraph>
-            <StyledParagraph level>{level}</StyledParagraph>
+            <StyledParagraph level activeColor={level}>{level}</StyledParagraph>
             <StyledParagraph date>{date}</StyledParagraph>
         </InnerWrapper>
     </StyledWrapper>

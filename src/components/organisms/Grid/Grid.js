@@ -4,18 +4,20 @@ import Card from 'components/molecules/Card/Card';
 import pilea from 'assets/img/pilea-peperomioides.jpg';
 import banana from 'assets/img/bananowiec.jpg';
 import maranta from 'assets/img/maranta.jpg';
+import epipreneum from 'assets/img/epipreneum.jpg';
+import sansiveria from 'assets/img/sansiveria.jpg';
 
 const cards = [
     {
         image: pilea,
-        name: 'Pieniążek',
-        level: 'medium',
+        name: 'pieniążek',
+        level: 'mid',
         date: '15/06/19',
     },
     {
         image: banana,
         name: 'bananowiec',
-        level: 'medium',
+        level: 'mid',
         date: '15/06/20',
     },
     {
@@ -25,15 +27,15 @@ const cards = [
         date: '15/06/19',
     },
     {
-        image: pilea,
-        name: 'Pieniążek',
-        level: 'medium',
-        date: '15/06/19',
+        image: epipreneum,
+        name: 'epipreneum',
+        level: 'easy',
+        date: '05/09/17',
     },
     {
-        image: banana,
-        name: 'bananowiec',
-        level: 'medium',
+        image: sansiveria,
+        name: 'sansiveria',
+        level: 'easy',
         date: '15/06/20',
     },
     {
