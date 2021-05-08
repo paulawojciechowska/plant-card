@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Background from 'assets/illustration/shape.svg';
 import Girl from 'assets/illustration/girl.svg';
+import LoginModal from 'components/organisms/LoginModal/LoginModal';
 
 const StyledWrapper = styled.div`
     /* position: relative; */
@@ -83,8 +84,11 @@ const Break = styled.br`
         display: none !important;
     }
 `;
-const Home = () => (
-    <StyledWrapper>
+const Home = () => {
+    const [isVisible, setVisibility] = useState(false);
+    return (
+        <StyledWrapper>
+        { isVisible && <LoginModal isVisible={isVisible} setVisibility={setVisibility}/> }
         <TextWrapper>
             <StyledParagraph>Web application created to help You <Break/> taking care of your plants.</StyledParagraph>
         </TextWrapper>
@@ -93,11 +97,12 @@ const Home = () => (
             <StyledParagraph grey>Build photo gallery </StyledParagraph>
         </TextWrapper>
         <TextWrapper>
-            <StyledLink>LOG IN</StyledLink>
+            <StyledLink onClick={() => setVisibility(!isVisible)}>LOG IN</StyledLink>
         </TextWrapper>
         <StyledIllustration src={Girl} />
         <StyledBackground src={Background}/>
     </StyledWrapper>
-);
+    )
+};
 
 export default Home;
