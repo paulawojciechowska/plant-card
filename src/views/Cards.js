@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import DetailModal from 'components/organisms/DetailModal/DetailModal';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import ButtonAdd from 'components/atoms/ButtonAdd/ButtonAdd';
 import Grid from 'components/organisms/Grid/Grid';
@@ -24,9 +25,9 @@ const Column = styled.div`
     padding: 5px;
     overflow: auto;
     ::-webkit-scrollbar {
-        width: 10px;
-        border-radius: 15px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        width: 6px;
+        border-radius: 3px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.15);
 
         @media only screen and (max-width: 900px) {
             background: transparent;
@@ -35,11 +36,13 @@ const Column = styled.div`
         }
     }
     ::-webkit-scrollbar-thumb {
-      background: ${({theme}) => theme.green};
-      border-radius: 15px;
-      @media only screen and (max-width: 900px) {
-        background: transparent;
-        }
+        border: 1.5px solid transparent;
+        width: 6px;
+        background: ${({theme}) => theme.greyD};
+        border-radius: 3px;
+        @media only screen and (max-width: 900px) {
+          background: transparent;
+          }
     }
     @media only screen and (max-width: 900px) {
         height: auto;
@@ -73,25 +76,31 @@ const StyledImage = styled.img`
         display: none;
     }
 `;
-const Cards = () => (
-    <StyledWrapper>
-        <Column>
-            <Grid/>
-        </Column>
-        <Column>
-            <ButtonAdd/>
-            <TextWrapper>
-                <StyledParagraph>Define basic information like name, </StyledParagraph>
-                <StyledParagraph>arrive day and care difficulty.</StyledParagraph>
-            </TextWrapper>
-            <TextWrapper>
-                <StyledParagraph>Make custom notes, mark water</    StyledParagraph>
-                <StyledParagraph>and sunlight demand.</StyledParagraph>
-            </TextWrapper>
-            <StyledParagraph grey>Check what your plant needs at anytime.</StyledParagraph>
-            <StyledImage src={cat} alt='cat'/>
-        </Column>
-    </StyledWrapper>
-);
+const Cards = () => {
+    const [isDetailedCard, setDetailedCard] = useState(true);
+    return (
+        <>
+        { isDetailedCard && <DetailModal isDetailedCard={isDetailedCard} setDetailedCard={setDetailedCard}/> }
+        <StyledWrapper>
+            <Column>
+                <Grid/>
+            </Column>
+            <Column>
+                <ButtonAdd/>
+                <TextWrapper>
+                    <StyledParagraph>Define basic information like name, </StyledParagraph>
+                    <StyledParagraph>arrive day and care difficulty.</StyledParagraph>
+                </TextWrapper>
+                <TextWrapper>
+                    <StyledParagraph>Make custom notes, mark water</    StyledParagraph>
+                    <StyledParagraph>and sunlight demand.</StyledParagraph>
+                </TextWrapper>
+                <StyledParagraph grey>Check what your plant needs at anytime.</StyledParagraph>
+                <StyledImage src={cat} alt='cat'/>
+            </Column>
+        </StyledWrapper>
+        </>
+    )
+};
 
 export default Cards;
