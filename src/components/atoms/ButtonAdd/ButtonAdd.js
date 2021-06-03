@@ -17,14 +17,14 @@ const StyledHeading = styled(Heading)`
     text-transform: uppercase;
     margin-right: 15px;
 `;
-const ButtonAddPlant = ({ isDetailedCard, setDetailedCard }) => (
+const ButtonAdd = ({ isDetailedCard, setDetailedCard }) => (
     <StyledDiv onClick={() => setDetailedCard(!isDetailedCard)}>
         <StyledHeading>Add new plant</StyledHeading>
         <ButtonIcon icon={Icon}/>
     </StyledDiv>
 );
-ButtonAddPlant.propTypes = {
+ButtonAdd.propTypes = {
     isDetailedCard: PropTypes.bool.isRequired,
     setDetailedCard: PropTypes.func.isRequired,
   };
-export default ButtonAddPlant;
+export default ButtonAdd;
