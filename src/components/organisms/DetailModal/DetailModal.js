@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Heading from 'components/atoms/Heading/Heading';
+import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
+import Icon from 'assets/icons/exit.svg';
 
 const Background = styled.div`
     height: 100vh;
@@ -12,6 +14,7 @@ const Background = styled.div`
     left: 0;
 `;
 const StyledWrapper = styled.div`
+    position: relative;
     height: 700px;
     width: 500px;
     border-radius: 30px;
@@ -19,14 +22,11 @@ const StyledWrapper = styled.div`
     opacity: 1;
     margin: auto;
 `;
-const Button = styled.button`
-    color: green;
-`;
 const DetailModal = ({ isDetailedCard, setDetailedCard }) => (
     <Background>
         <StyledWrapper>
             <Heading green>Pieniążek</Heading>
-            <Button onClick={() => setDetailedCard(!isDetailedCard)}>close</Button>
+            <ButtonIcon exit onClick={() => setDetailedCard(!isDetailedCard)} icon={Icon} />
         </StyledWrapper>
     </Background>
 );

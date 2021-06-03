@@ -40,7 +40,7 @@ const cards = [
     },
     {
         image: maranta,
-        name: 'maranta',
+        name: 'maranta1',
         level: 'hard',
         date: '15/06/19',
     },

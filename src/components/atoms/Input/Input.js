@@ -10,6 +10,7 @@ const Input = styled.input`
     border: none;
     border-radius: 30px;
     margin: 15px 0;
+    outline: none;
 
     ::placeholder {
     text-transform: uppercase;

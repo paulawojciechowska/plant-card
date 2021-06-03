@@ -21,6 +21,15 @@ const ButtonIcon = styled.button`
         height: 53px;
     }
     `}
+    ${({ exit }) =>
+    exit &&
+    css`
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 40px;
+      height: 40px;
+    `}
 
 `;
 

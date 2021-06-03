@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import Heading from 'components/atoms/Heading/Heading';
 import Icon from 'assets/icons/leaves.svg';
@@ -16,11 +17,14 @@ const StyledHeading = styled(Heading)`
     text-transform: uppercase;
     margin-right: 15px;
 `;
-const ButtonAdd = () => (
-    <StyledDiv>
+const ButtonAdd = ({ isDetailedCard, setDetailedCard }) => (
+    <StyledDiv onClick={() => setDetailedCard(!isDetailedCard)}>
         <StyledHeading>Add new plant</StyledHeading>
-        <ButtonIcon icon={Icon} />
+        <ButtonIcon icon={Icon}/>
     </StyledDiv>
 );
-
+ButtonAdd.propTypes = {
+    isDetailedCard: PropTypes.bool.isRequired,
+    setDetailedCard: PropTypes.func.isRequired,
+  };
 export default ButtonAdd;

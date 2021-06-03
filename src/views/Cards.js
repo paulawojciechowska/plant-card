@@ -86,7 +86,7 @@ const Cards = () => {
                 <Grid/>
             </Column>
             <Column>
-                <ButtonAdd/>
+                <ButtonAdd isDetailedCard={isDetailedCard} setDetailedCard={setDetailedCard}/>
                 <TextWrapper>
                     <StyledParagraph>Define basic information like name, </StyledParagraph>
                     <StyledParagraph>arrive day and care difficulty.</StyledParagraph>

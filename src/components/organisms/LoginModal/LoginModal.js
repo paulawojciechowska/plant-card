@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import Heading from 'components/atoms/Heading/Heading';
 import Input from 'components/atoms/Input/Input';
 import Button from 'components/atoms/Button/Button';
+import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
+import Icon from 'assets/icons/exit.svg';
 
 const ExternalWrapper = styled.div`
     position: absolute;
@@ -16,9 +18,10 @@ const ExternalWrapper = styled.div`
     z-index: 12000;
 `;
 const FormBackground = styled.div`
+    position: absolute;
     background: white;
     margin: auto;
-    transform: translateY(25%);
+    transform: translateX(100%) translateY(25%);
     width: 480px;
     height: 480px;
     border-radius: 30px;
@@ -31,6 +34,7 @@ const FormBackground = styled.div`
 const LoginModal = ({isVisible, setVisibility}) => (
     <ExternalWrapper>
         <FormBackground>
+            <ButtonIcon exit icon={Icon} onClick={() => setVisibility(!isVisible)}/>
             <Heading>Log In</Heading>
             <Input placeholder="login"/>
             <Input placeholder="password"/>
