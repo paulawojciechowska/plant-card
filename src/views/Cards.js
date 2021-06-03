@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import DetailModal from 'components/organisms/DetailModal/DetailModal';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import ButtonAdd from 'components/atoms/ButtonAdd/ButtonAdd';
+import ButtonAddPlant from 'components/atoms/ButtonAddPlant/ButtonAddPlant';
 import Grid from 'components/organisms/Grid/Grid';
 import cat from 'assets/illustration/cat.svg';
 
@@ -77,7 +77,7 @@ const StyledImage = styled.img`
     }
 `;
 const Cards = () => {
-    const [isDetailedCard, setDetailedCard] = useState(true);
+    const [isDetailedCard, setDetailedCard] = useState(false);
     return (
         <>
         { isDetailedCard && <DetailModal isDetailedCard={isDetailedCard} setDetailedCard={setDetailedCard}/> }
@@ -86,7 +86,7 @@ const Cards = () => {
                 <Grid/>
             </Column>
             <Column>
-                <ButtonAdd isDetailedCard={isDetailedCard} setDetailedCard={setDetailedCard}/>
+                <ButtonAddPlant isDetailedCard={isDetailedCard} setDetailedCard={setDetailedCard}/>
                 <TextWrapper>
                     <StyledParagraph>Define basic information like name, </StyledParagraph>
                     <StyledParagraph>arrive day and care difficulty.</StyledParagraph>

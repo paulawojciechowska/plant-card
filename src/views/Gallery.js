@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ButtonAdd from 'components/atoms/ButtonAdd/ButtonAdd';
+// import ButtonAdd from 'components/atoms/ButtonAddPlant/ButtonAddPlant';
 import Heading from 'components/atoms/Heading/Heading';
 import GalleryGrid from 'components/organisms/GalleryGrid/GalleryGrid';
 
@@ -19,7 +19,7 @@ const StyledHeading = styled(Heading)`
 const Gallery = () => (
     <StyledWrapper>
         <StyledHeading upper >track plant grow, collect moments</StyledHeading>
-        <ButtonAdd/>
+        {/* <ButtonAdd/> */}
         <GalleryGrid/>
     </StyledWrapper>
 );
