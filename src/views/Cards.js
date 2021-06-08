@@ -77,7 +77,7 @@ const StyledImage = styled.img`
     }
 `;
 const Cards = () => {
-    const [isDetailedCard, setDetailedCard] = useState(true);
+    const [isDetailedCard, setDetailedCard] = useState(false);
     return (
         <>
         { isDetailedCard && <DetailModal isDetailedCard={isDetailedCard} setDetailedCard={setDetailedCard}/> }
@@ -86,7 +86,7 @@ const Cards = () => {
                 <Grid/>
             </Column>
             <Column>
-                <ButtonAdd isDetailedCard={isDetailedCard} setDetailedCard={setDetailedCard}/>
+                <ButtonAdd isOpen={isDetailedCard} openModal={setDetailedCard}/>
                 <TextWrapper>
                     <StyledParagraph>Define basic information like name, </StyledParagraph>
                     <StyledParagraph>arrive day and care difficulty.</StyledParagraph>

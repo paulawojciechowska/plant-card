@@ -5,14 +5,15 @@ import Heading from 'components/atoms/Heading/Heading';
 import Input from 'components/atoms/Input/Input';
 import Button from 'components/atoms/Button/Button';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
+import AddFile from 'components/atoms/AddFile/AddFile';
 import Icon from 'assets/icons/exit.svg';
 
 const ExternalWrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
+    background-color: rgba(120,120,120,0.5);
+    backdrop-filter: blur(4px);
     width: 100vw;
     height: 100vh;
     z-index: 12000;
@@ -26,34 +27,33 @@ const FormBackground = styled.div`
     height: 480px;
     border-radius: 30px;
     padding: 30px;
-    box-shadow: 5px 5px 5px 5px #ccc;
     display: flex;
     flex-direction:column;
     align-items: center;
 `;
 const Text = styled.p`
-    margin: 20px 0 15px 0;
+    margin: 0;
     text-transform: uppercase;
-    /* color: ${({theme}) => theme.greyD}; */
+    color: ${({theme}) => theme.greyD};
     font-size: ${({theme}) => theme.fontSize.m};
     font-weight: ${({theme}) => theme.bold};
 `;
-const LoginModal = ({isVisible, setVisibility}) => (
+
+const AddPhotoModal = ({ isAddPhoto, setAddPhoto }) => (
     <ExternalWrapper>
-        <FormBackground>
-            <ButtonIcon exit icon={Icon} onClick={() => setVisibility(!isVisible)}/>
-            <Heading>Log In</Heading>
-            <Input placeholder="login"/>
-            <Input placeholder="password"/>
-            <Text>create account</Text>
-            <Button onClick={() => setVisibility(!isVisible)}>enter</Button>
-        </FormBackground>
-    </ExternalWrapper>
+    <FormBackground>
+        <ButtonIcon exit icon={Icon} onClick={() => setAddPhoto(!isAddPhoto)}/>
+        <Heading>Add photo</Heading>
+        <Input placeholder="description"/>
+        <Input placeholder="photo url"/>
+        <Text> or </Text>
+        <AddFile />
+        <Button onClick={() => setAddPhoto(!isAddPhoto)}>add</Button>
+    </FormBackground>
+</ExternalWrapper>
 );
-
-LoginModal.propTypes = {
-    isVisible: PropTypes.bool.isRequired,
-    setVisibility: PropTypes.func.isRequired,
+AddPhotoModal.propTypes = {
+    isAddPhoto: PropTypes.bool.isRequired,
+    setAddPhoto: PropTypes.func.isRequired,
   };
-
-export default LoginModal;
+export default AddPhotoModal;
