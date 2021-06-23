@@ -1,9 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import styled from'styled-components';
 import Input from 'components/atoms/Input/Input';
 import Add from 'assets/icons/add.svg';
 
-const Label = styled.label`
+export const Label = styled.label`
     padding: 0 30px;
     width: 280px;
     height: 60px;
@@ -12,12 +11,14 @@ const Label = styled.label`
     border-radius: 30px;
     margin: 15px 0;
 `;
-const StyledInput = styled(Input)`
+
+export const StyledInput = styled(Input)`
     height: 0;
     width: 0;
     opacity: 0;
 `;
-const Text = styled.p`
+
+export const Text = styled.p`
     position: relative;
     text-transform: uppercase;
     color: ${({theme}) => theme.greyD};
@@ -33,12 +34,4 @@ const Text = styled.p`
         display: block;
         right: 5px;
       }
-      `;
-const AddFile = () => (
-    <Label>
-        <Text>upload photo</Text>
-        <StyledInput type='file' placeholder="file" />
-    </Label>
-);
-
-export default AddFile;
+`;

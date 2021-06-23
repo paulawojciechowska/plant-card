@@ -6,6 +6,7 @@ export const theme = {
     greyD: 'hsl(0, 0%, 74%)',
     greyL: 'hsl(0, 0%, 90%)',
     black: 'hsl(0, 0%, 0%)',
+    white: 'hsl(0, 100%, 100%)',
     fontFamily: 'Montserrat',
     light: 300,
     medium: 500,

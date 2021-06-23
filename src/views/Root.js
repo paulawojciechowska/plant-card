@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import MainTemplate from 'template/MainTemplate';
-import Home from 'views/Home';
-import Cards from 'views/Cards';
-import Gallery from 'views/Gallery';
+import Home from 'views/Home/Home';
+import Cards from 'views/Cards/Cards';
+import Gallery from 'views/Gallery/Gallery';
 
 const Root = () => (
   

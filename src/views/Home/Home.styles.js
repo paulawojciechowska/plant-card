@@ -1,21 +1,17 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import Background from 'assets/illustration/shape.svg';
-import Girl from 'assets/illustration/girl.svg';
-import LoginModal from 'components/organisms/LoginModal/LoginModal';
 
-const StyledWrapper = styled.div`
+export const StyledWrapper = styled.div`
     /* position: relative; */
     width: 100vw;
 `;
-const TextWrapper = styled.div`
+export const TextWrapper = styled.div`
     margin: 35px 0;
     @media only screen and (max-width: 600px) {
         margin: 15px 0;
     }
 `;
-const StyledBackground = styled.img`
+export const StyledBackground = styled.img`
     position: absolute;
     width: 100%;
     height: auto;
@@ -28,7 +24,7 @@ const StyledBackground = styled.img`
         display: none;
     }
 `;
-const StyledIllustration = styled.img`
+export const StyledIllustration = styled.img`
     position: absolute;
     width: 630px;
     height: 630px;
@@ -61,7 +57,7 @@ const StyledIllustration = styled.img`
         height: 490px;
     } 
 `;
-const StyledParagraph = styled(Paragraph)`
+export const StyledParagraph = styled(Paragraph)`
     padding-left: 52px;
     
     @media only screen and (max-width: 1200px) {
@@ -71,7 +67,7 @@ const StyledParagraph = styled(Paragraph)`
         font-size: 25px;
     }
 `;
-const StyledLink = styled.a`
+export const StyledLink = styled.a`
     color: ${({theme}) => theme.green};
     margin-top: 35px;
     padding-left: 52px;
@@ -79,30 +75,8 @@ const StyledLink = styled.a`
     font-weight: ${({theme}) => theme.bold};
     z-index: 99999;
 `;
-const Break = styled.br`
+export const Break = styled.br`
     @media only screen and (max-width: 550px) {
         display: none !important;
     }
 `;
-const Home = () => {
-    const [isVisible, setVisibility] = useState(false);
-    return (
-        <StyledWrapper>
-        { isVisible && <LoginModal isVisible={isVisible} setVisibility={setVisibility}/> }
-        <TextWrapper>
-            <StyledParagraph>Web application created to help You <Break/> taking care of your plants.</StyledParagraph>
-        </TextWrapper>
-        <TextWrapper>
-            <StyledParagraph grey>Make helpful fishcards</StyledParagraph>
-            <StyledParagraph grey>Build photo gallery </StyledParagraph>
-        </TextWrapper>
-        <TextWrapper>
-            <StyledLink onClick={() => setVisibility(!isVisible)}>LOG IN</StyledLink>
-        </TextWrapper>
-        <StyledIllustration src={Girl} />
-        <StyledBackground src={Background}/>
-    </StyledWrapper>
-    )
-};
-
-export default Home;
