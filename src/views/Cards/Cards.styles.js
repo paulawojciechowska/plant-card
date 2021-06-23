@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
-import DetailModal from 'components/organisms/DetailModal/DetailModal';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import ButtonAdd from 'components/atoms/ButtonAdd/ButtonAdd';
-import Grid from 'components/organisms/Grid/Grid';
-import cat from 'assets/illustration/cat.svg';
 
-const StyledWrapper = styled.div`
+export const StyledWrapper = styled.div`
     display: grid;
     grid-template-columns: 2fr 1fr;
     justify-items: center;
@@ -20,7 +15,7 @@ const StyledWrapper = styled.div`
         justify-content: center;
     }
 `;
-const Column = styled.div`
+export const Column = styled.div`
     height: 615px;
     padding: 5px;
     overflow: auto;
@@ -51,7 +46,7 @@ const Column = styled.div`
         }
 `;
 
-const TextWrapper = styled.div`
+export const TextWrapper = styled.div`
     margin: 25px 0;
     @media only screen and (max-width: 900px) {
         display: flex;
@@ -60,14 +55,14 @@ const TextWrapper = styled.div`
         margin: 10px 0;
         }
 `;
-const StyledParagraph = styled(Paragraph)`
+export const StyledParagraph = styled(Paragraph)`
     font-size: 20px;
     @media only screen and (max-width: 900px) {
         display: flex;
         justify-content: center;
         }
 `;
-const StyledImage = styled.img`
+export const StyledImage = styled.img`
     max-height: 70%; 
     max-width: 70%;
     padding: 20px;
@@ -76,31 +71,3 @@ const StyledImage = styled.img`
         display: none;
     }
 `;
-const Cards = () => {
-    const [isDetailedCard, setDetailedCard] = useState(false);
-    return (
-        <>
-        { isDetailedCard && <DetailModal isDetailedCard={isDetailedCard} setDetailedCard={setDetailedCard}/> }
-        <StyledWrapper>
-            <Column>
-                <Grid/>
-            </Column>
-            <Column>
-                <ButtonAdd isOpen={isDetailedCard} openModal={setDetailedCard}/>
-                <TextWrapper>
-                    <StyledParagraph>Define basic information like name, </StyledParagraph>
-                    <StyledParagraph>arrive day and care difficulty.</StyledParagraph>
-                </TextWrapper>
-                <TextWrapper>
-                    <StyledParagraph>Make custom notes, mark water</    StyledParagraph>
-                    <StyledParagraph>and sunlight demand.</StyledParagraph>
-                </TextWrapper>
-                <StyledParagraph grey>Check what your plant needs at anytime.</StyledParagraph>
-                <StyledImage src={cat} alt='cat'/>
-            </Column>
-        </StyledWrapper>
-        </>
-    )
-};
-
-export default Cards;

@@ -1,35 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { ModalBackground } from 'components/molecules/ModalBackground/ModalBackground';
+import { ModalWrapper } from 'components/molecules/ModalWrapper/ModalWrapper';
 import Heading from 'components/atoms/Heading/Heading';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import Icon from 'assets/icons/exit.svg';
 
-const Background = styled.div`
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(120,120,120,0.5);
-    backdrop-filter: blur(4px);
-    position: absolute;
-    top: 0;
-    left: 0;
-`;
-const StyledWrapper = styled.div`
-    position: relative;
-    height: 700px;
-    width: 500px;
-    border-radius: 30px;
-    background-color: rgba(255,255,255,1);
-    opacity: 1;
-    margin: auto;
-`;
 const DetailModal = ({ isDetailedCard, setDetailedCard }) => (
-    <Background>
-        <StyledWrapper>
+    <ModalBackground>
+        <ModalWrapper>
             <Heading green>Pieniążek</Heading>
             <ButtonIcon exit onClick={() => setDetailedCard(!isDetailedCard)} icon={Icon} />
-        </StyledWrapper>
-    </Background>
+        </ModalWrapper>
+    </ModalBackground>
 );
 
 DetailModal.propTypes = {
