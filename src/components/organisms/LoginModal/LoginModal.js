@@ -11,6 +11,9 @@ const ExternalWrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
     width: 100vw;
@@ -21,8 +24,8 @@ const FormBackground = styled.div`
     position: absolute;
     background: white;
     margin: auto;
-    transform: translateX(100%) translateY(25%);
-    width: 480px;
+    /* transform: translateX(100%) translateY(25%); */
+    width: 100%;
     height: 480px;
     border-radius: 30px;
     padding: 30px;
