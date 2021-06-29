@@ -13,10 +13,10 @@ const Button = styled.button`
     font-size: ${({theme}) => theme.fontSize.m};
 
     ${({ big }) =>
-    big &&
-    css`
-      width: 300;
-    `}
+      big &&
+      css`
+        width: 300;
+      `}
 `;
 
 export default Button;

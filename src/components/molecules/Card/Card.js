@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import defaultImage from 'assets/img/leaf.jpg';
 import { StyledWrapper, StyledImage, StyledParagraph } from './Card.styles';
 
 const Card = ({ image, name, level, date}) => (
@@ -14,10 +15,12 @@ const Card = ({ image, name, level, date}) => (
 );
 
 Card.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     name: PropTypes.string.isRequired,
     level: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
-
 }
+Card.defaultProps = {
+    image: defaultImage,
+  };
 export default Card;

@@ -30,6 +30,12 @@ const ButtonIcon = styled.button`
       width: 40px;
       height: 40px;
     `}
+    ${({ form }) =>
+    form &&
+    css`
+      background-color: transparent;
+      background-size: 100%;
+    `}
 
 `;
 
