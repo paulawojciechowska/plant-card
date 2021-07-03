@@ -5,9 +5,9 @@ import { ModalBackground } from 'components/molecules/ModalBackground/ModalBackg
 import { ModalWrapper } from 'components/molecules/ModalWrapper/ModalWrapper';
 import Button from 'components/atoms/Button/Button';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
-import {Label} from 'components/atoms/Label/Label';
 import FormField from 'components/molecules/FormField/FormField';
 import RadioForm from 'components/molecules/RadioForm/RadioForm';
+import { iconsData } from 'data/iconsData';
 import { PlantContext } from 'providers/PlantProvider';
 import Icon from 'assets/icons/exit.svg';
 
@@ -16,11 +16,14 @@ const initialFormState = {
     level: '',
     date: '',
     note: '',
+    sun: 0,
+    water: 0,
+    mist: 0,
   };
 
 const StyledModalWrapper = styled(ModalWrapper)`
   align-items: start;
-  padding: 50px;
+  padding: 25px 60px;
 `;
 const StyledButton = styled(Button)`
   width: 300px;
@@ -50,9 +53,9 @@ const PlantForm = ({ isDetailedCard, setDetailedCard }) => {
                 <FormField label="name" id="name" name="name" value={formValues.average} onChange={handleInputChange} />
                 <FormField label="care level" id="level" name="level" value={formValues.level} onChange={handleInputChange} />
                 <FormField label="arrival date" id="date" name="date" value={formValues.date} onChange={handleInputChange} />
-                <Label>Sun expourse:</Label>
-                <Label>Water needs:</Label>
-                <RadioForm/>
+                <RadioForm label="SUN expourse" icons={iconsData.sun} id="sun" name="sun" value={formValues.sun} onChange={handleInputChange}/>
+                <RadioForm label="WATER needs" icons={iconsData.water} id="water" name="water" value={formValues.sun} onChange={handleInputChange}/>
+                <RadioForm label="MISTING needs" icons={iconsData.mist} id="mist" name="mist" value={formValues.sun} onChange={handleInputChange}/>
                 <FormField label="notes" id="notes" name="notes" value={formValues.note} onChange={handleInputChange} />
                 <StyledButton big>add new plant</StyledButton>
             </StyledModalWrapper>
