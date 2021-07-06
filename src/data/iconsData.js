@@ -43,7 +43,9 @@ export const iconsData = {
         ],
     ],
     mist: [
-        [mist0, 
-        mist1,]
+        [
+            mist0, 
+            mist1,
+        ]
     ], 
 }

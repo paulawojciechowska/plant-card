@@ -9,6 +9,7 @@ import FormField from 'components/molecules/FormField/FormField';
 import RadioForm from 'components/molecules/RadioForm/RadioForm';
 import { iconsData } from 'data/iconsData';
 import { PlantContext } from 'providers/PlantProvider';
+// import RadioButton from 'components/atoms/RadioButton/RadioButton';
 import Icon from 'assets/icons/exit.svg';
 
 const initialFormState = {
@@ -32,14 +33,18 @@ const StyledButton = styled(Button)`
 const PlantForm = ({ isDetailedCard, setDetailedCard }) => {
     const [formValues, setFormValues] = useState(initialFormState);
     const { addNewPlant } = useContext(PlantContext);
+    // const icons = iconsData.mist;
   
     const handleInputChange = (e) => {
       setFormValues({
         ...formValues,
         [e.target.name]: e.target.value,
       });
+      console.log(formValues);
     };
-  
+    // const handleRadioChange = (e) => {
+    //   console.log(e.target.value);
+    // }
     const handleSubmitPlant = (e) => {
         e.preventDefault();
         addNewPlant(formValues);
@@ -49,15 +54,16 @@ const PlantForm = ({ isDetailedCard, setDetailedCard }) => {
     return (
         <ModalBackground>
             <StyledModalWrapper as="form" onSubmit={handleSubmitPlant}>
-                <ButtonIcon exit onClick={() => setDetailedCard(!isDetailedCard)} icon={Icon} />
+                <ButtonIcon exit type="button" onClick={() => setDetailedCard(!isDetailedCard)} icon={Icon} />
                 <FormField label="name" id="name" name="name" value={formValues.average} onChange={handleInputChange} />
                 <FormField label="care level" id="level" name="level" value={formValues.level} onChange={handleInputChange} />
                 <FormField label="arrival date" id="date" name="date" value={formValues.date} onChange={handleInputChange} />
+                {/* <RadioButton name="test" checked={state} type='radio' onChange={handleChange}/> */}
                 <RadioForm label="SUN expourse" icons={iconsData.sun} id="sun" name="sun" value={formValues.sun} onChange={handleInputChange}/>
                 <RadioForm label="WATER needs" icons={iconsData.water} id="water" name="water" value={formValues.sun} onChange={handleInputChange}/>
                 <RadioForm label="MISTING needs" icons={iconsData.mist} id="mist" name="mist" value={formValues.sun} onChange={handleInputChange}/>
                 <FormField label="notes" id="notes" name="notes" value={formValues.note} onChange={handleInputChange} />
-                <StyledButton big>add new plant</StyledButton>
+                <StyledButton type="submit" big>add new plant</StyledButton>
             </StyledModalWrapper>
         </ModalBackground>
     );
