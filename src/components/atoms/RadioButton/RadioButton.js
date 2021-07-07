@@ -11,7 +11,7 @@ const BackgroundWrapper = styled.label`
     background-image: url(${({ icon }) => icon});
     margin: 0 11px;
 `;
-const RadioButton = ({icon, name}) => {
+const RadioButton = ({icon, name, value}) => {
     const [state, setState] = useState('unchecked');
     const handleChange = (e) => {
         console.log(e.target.value);
@@ -19,11 +19,13 @@ const RadioButton = ({icon, name}) => {
             setState('unchecked')
          } else {
             setState('checked');
+            e.target.value = [icon[1]];
+            console.log(e.target.value);
          }
     }
     return (
-        <BackgroundWrapper icon={(state==='checked') ? icon[1] : icon[0]}>
-            <StyledInput name={name} checked={state} type='radio' onChange={handleChange}/>
+        <BackgroundWrapper icon={(state === 'checked') ? icon[1] : icon[0]}>
+            <StyledInput name={name} value={value} checked={state} type='radio' onChange={handleChange}/>
         </BackgroundWrapper>
     )
 };
@@ -31,5 +33,6 @@ const RadioButton = ({icon, name}) => {
 RadioButton.propTypes = {
     icon: PropTypes.shape.isRequired,
     name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
 }
 export default RadioButton;

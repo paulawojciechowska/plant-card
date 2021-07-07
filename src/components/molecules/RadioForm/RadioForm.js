@@ -14,11 +14,11 @@ const StyledLabel = styled(Label)`
     width: 160px;
     /* margin-right: 55px; */
 `;
-const RadioForm = ({ label, icons, id, name}) => (
-    <StyledWrapper>
+const RadioForm = ({ label, icons, id, name, onChange, value}) => (
+    <StyledWrapper onChange={onChange}>
         <StyledLabel htmlFor={id}>{label}</StyledLabel>
-        {icons.map((icon, i) => (
-            <RadioButton icon={icon} name={name} value={`${id} ${i}`} key={`${id}`}/>
+        {icons.map((icon) => (
+            <RadioButton icon={icon} name={name} value={value} key={`${id}`}/>
         ))}
     </StyledWrapper>
 );
@@ -27,6 +27,7 @@ RadioForm.propTypes = {
     icons: PropTypes.shape.isRequired,
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    // value: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.number.isRequired,
 }
 export default RadioForm;

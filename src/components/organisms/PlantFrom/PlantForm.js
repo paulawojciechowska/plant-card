@@ -62,7 +62,7 @@ const PlantForm = ({ isDetailedCard, setDetailedCard }) => {
                 <RadioForm label="SUN expourse" icons={iconsData.sun} id="sun" name="sun" value={formValues.sun} onChange={handleInputChange}/>
                 <RadioForm label="WATER needs" icons={iconsData.water} id="water" name="water" value={formValues.sun} onChange={handleInputChange}/>
                 <RadioForm label="MISTING needs" icons={iconsData.mist} id="mist" name="mist" value={formValues.sun} onChange={handleInputChange}/>
-                <FormField label="notes" id="notes" name="notes" value={formValues.note} onChange={handleInputChange} />
+                <FormField label="notes" id="notes" name="note" value={formValues.note} onChange={handleInputChange} />
                 <StyledButton type="submit" big>add new plant</StyledButton>
             </StyledModalWrapper>
         </ModalBackground>
