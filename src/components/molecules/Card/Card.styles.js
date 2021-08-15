@@ -9,6 +9,7 @@ export const StyledWrapper = styled.div`
     justify-content: space-around;
     padding: 5px;
     margin: 60px 70px;
+    cursor: pointer;
     -webkit-box-shadow: 5px 5px 10px 0 #BCBCBC;
     -moz-box-shadow: 5px 5px 10px 0 #BCBCBC;
      box-shadow: 5px 5px 10px 0 #BCBCBC;

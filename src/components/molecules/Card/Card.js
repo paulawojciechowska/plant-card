@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import defaultImage from 'assets/img/leaf.jpg';
 import { StyledWrapper, StyledImage, StyledParagraph } from './Card.styles';
 
-const Card = ({ image, name, level, date }) => (
-    <StyledWrapper>
+const Card = ({ image, name, level, date, ...props }) => (
+    <StyledWrapper {...props}>
         <StyledImage src={image} />
         <div>
             <StyledParagraph title>{name}</StyledParagraph>
