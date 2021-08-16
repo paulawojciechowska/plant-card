@@ -18,21 +18,20 @@ const Text = styled.p`
     font-weight: ${({theme}) => theme.bold};
 `;
 
-const AddPhotoModal = ({ isAddPhoto, setAddPhoto }) => (
+const AddPhotoModal = ({ handleClose }) => (
     <ModalBackground>
         <ModalWrapper>
-            <ButtonIcon exit icon={Icon} onClick={() => setAddPhoto(!isAddPhoto)}/>
+            <ButtonIcon exit icon={Icon} onClick={handleClose}/>
             <Heading>Add photo</Heading>
             <Input placeholder="description"/>
             <Input placeholder="photo url"/>
             <Text> or </Text>
             <AddFile />
-            <Button onClick={() => setAddPhoto(!isAddPhoto)}>add</Button>
+            <Button onClick={handleClose}>add</Button>
         </ModalWrapper>
     </ModalBackground>
 );
 AddPhotoModal.propTypes = {
-    isAddPhoto: PropTypes.bool.isRequired,
-    setAddPhoto: PropTypes.func.isRequired,
+    handleClose: PropTypes.func.isRequired,
   };
 export default AddPhotoModal;

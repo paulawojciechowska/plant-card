@@ -15,22 +15,21 @@ const Text = styled.p`
     font-size: ${({theme}) => theme.fontSize.m};
     font-weight: ${({theme}) => theme.bold};
 `;
-const LoginModal = ({isVisible, setVisibility}) => (
+const LoginModal = ({handleClose}) => (
     <ModalBackground>
         <ModalWrapper>
-            <ButtonIcon exit icon={Icon} onClick={() => setVisibility(!isVisible)}/>
+            <ButtonIcon exit icon={Icon} onClick={handleClose} />
             <Heading>Log In</Heading>
             <Input placeholder="login"/>
             <Input placeholder="password"/>
             <Text>create account</Text>
-            <Button onClick={() => setVisibility(!isVisible)}>enter</Button>
+            <Button onClick={handleClose}>enter</Button>
         </ModalWrapper>
     </ModalBackground>
 );
 
 LoginModal.propTypes = {
-    isVisible: PropTypes.bool.isRequired,
-    setVisibility: PropTypes.func.isRequired,
+    handleClose: PropTypes.func.isRequired,
   };
 
 export default LoginModal;

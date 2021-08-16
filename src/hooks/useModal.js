@@ -6,11 +6,11 @@ const useModal = (initialState=false) => {
     const handleOpenModal = () => setModalState(true);
     const handleCloseModal = () => setModalState(false);
 
-    return {
+    return [
         isModalOpen,
         handleOpenModal,
         handleCloseModal,
-    };
+    ];
 };
 
 export default useModal;

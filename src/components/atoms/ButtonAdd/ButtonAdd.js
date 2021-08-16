@@ -17,14 +17,13 @@ const StyledHeading = styled(Heading)`
     text-transform: uppercase;
     margin-right: 15px;
 `;
-const ButtonAdd = ({ isOpen, openModal }) => (
-    <StyledDiv onClick={() => openModal(!isOpen)}>
+const ButtonAdd = ({ openModal }) => (
+    <StyledDiv onClick={openModal}>
         <StyledHeading>Add new plant</StyledHeading>
         <ButtonIcon icon={Icon}/>
     </StyledDiv>
 );
 ButtonAdd.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
     openModal: PropTypes.func.isRequired,
   };
 export default ButtonAdd;

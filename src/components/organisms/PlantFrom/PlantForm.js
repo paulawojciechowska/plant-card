@@ -30,7 +30,7 @@ const StyledButton = styled(Button)`
   width: 300px;
   margin: 0 auto;
 `;
-const PlantForm = ({ isDetailedCard, setDetailedCard }) => {
+const PlantForm = ({ handleClose }) => {
     const [formValues, setFormValues] = useState(initialFormState);
     const { addNewPlant } = useContext(PlantContext);
     // const icons = iconsData.mist;
@@ -49,12 +49,12 @@ const PlantForm = ({ isDetailedCard, setDetailedCard }) => {
         e.preventDefault();
         addNewPlant(formValues);
         setFormValues(initialFormState);
-        setDetailedCard(!isDetailedCard)
+        handleClose();
     };
     return (
         <ModalBackground>
             <StyledModalWrapper as="form" onSubmit={handleSubmitPlant}>
-                <ButtonIcon exit type="button" onClick={() => setDetailedCard(!isDetailedCard)} icon={Icon} />
+                <ButtonIcon exit type="button" onClick={handleClose} icon={Icon} />
                 <FormField label="name" id="name" name="name" value={formValues.average} onChange={handleInputChange} />
                 <FormField label="care level" id="level" name="level" value={formValues.level} onChange={handleInputChange} />
                 <FormField label="arrival date" id="date" name="date" value={formValues.date} onChange={handleInputChange} />
@@ -70,8 +70,7 @@ const PlantForm = ({ isDetailedCard, setDetailedCard }) => {
 };
 
 PlantForm.propTypes = {
-    isDetailedCard: PropTypes.bool.isRequired,
-    setDetailedCard: PropTypes.func.isRequired,
+    handleClose: PropTypes.func.isRequired,
   };
 
 export default PlantForm;
