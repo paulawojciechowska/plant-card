@@ -5,11 +5,11 @@ import Grid from 'components/organisms/Grid/Grid';
 import PlantProvider from 'providers/PlantProvider';
 import cat from 'assets/illustration/cat.svg';
 import PlantDetailModal from 'components/organisms/PlantDetailModal/PlantDetailModal';
+import PlantDetails from 'components/organisms/PlantDetails/PlantDetails';
 import useModal from 'hooks/useModal';
 import { StyledWrapper, Column, TextWrapper, StyledParagraph, StyledImage } from './Cards.styles'; 
 
 const Cards = () => {
-    // const [isDetailedCard, setDetailedCard] = useState(false);
     const [isModalOpen, handleOpenModal, handleCloseModal] = useModal();
     const [isFormOpen, handleOpenForm, handleCloseForm] = useModal();
     
@@ -24,7 +24,8 @@ const Cards = () => {
             { isFormOpen ? <PlantForm handleClose={handleCloseForm}/> : null}
         <StyledWrapper>
             <Column>
-            {isModalOpen ? <PlantDetailModal isOpen={isModalOpen} handleClose={handleCloseModal}/> : null}
+            {isModalOpen ? <PlantDetailModal isOpen={isModalOpen} handleClose={handleCloseModal}>
+            <PlantDetails/></PlantDetailModal> : null}
                 <Grid handleOpenPlantDetails={handleOpenPlantDetails} />
             </Column>
             <Column>

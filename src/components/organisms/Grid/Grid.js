@@ -15,7 +15,7 @@ const Grid = ({handleOpenPlantDetails}) => {
     return (
         <StyledWrapper>
             {cards.map(item => (
-                <Card onClick={() => handleOpenPlantDetails(item.id)}
+                <Card onClick={() => handleOpenPlantDetails(item.id, item.name, item.image)}
                     image={item.image}
                     name={item.name}
                     level={item.level}

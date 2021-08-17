@@ -6,7 +6,7 @@ import { ModalWrapper} from './PlantDetailModal.styles';
 
  const modalContainer = document.getElementById('modal-container');
 
- const PlantDetailModal = ({ handleClose }) => {
+ const PlantDetailModal = ({ handleClose, children }) => {
      const modalNode = document.createElement('div');
      React.useEffect(() => {
          modalContainer.appendChild(modalNode);
@@ -15,7 +15,7 @@ import { ModalWrapper} from './PlantDetailModal.styles';
              modalContainer.removeChild(modalNode);
          }
      }, [modalNode]);
-    return ReactDOM.createPortal(<ModalWrapper><ButtonIcon exit icon={Icon} onClick={handleClose}/><div>This is detail modal</div></ModalWrapper>, modalNode);
+    return ReactDOM.createPortal(<ModalWrapper><ButtonIcon exit icon={Icon} onClick={handleClose}/>{children}</ModalWrapper>, modalNode);
  };
 
  export default PlantDetailModal;
