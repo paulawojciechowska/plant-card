@@ -4,7 +4,7 @@ import ButtonAdd from 'components/atoms/ButtonAdd/ButtonAdd';
 import Grid from 'components/organisms/Grid/Grid';
 import PlantProvider from 'providers/PlantProvider';
 import cat from 'assets/illustration/cat.svg';
-import PlantDetailModal from 'components/organisms/PlantDetailModal/PlantDetailModal';
+import Modal from 'components/organisms/Modal/Modal';
 import PlantDetails from 'components/organisms/PlantDetails/PlantDetails';
 import useModal from 'hooks/useModal';
 import { StyledWrapper, Column, TextWrapper, StyledParagraph, StyledImage } from './Cards.styles'; 
@@ -21,11 +21,12 @@ const Cards = () => {
     return (
         <PlantProvider>
             <>
-            { isFormOpen ? <PlantForm handleClose={handleCloseForm}/> : null}
+        <Modal isOpen={isFormOpen} handleClose={handleCloseForm}><PlantForm /></Modal>
         <StyledWrapper>
             <Column>
-            {isModalOpen ? <PlantDetailModal isOpen={isModalOpen} handleClose={handleCloseModal}>
-            <PlantDetails/></PlantDetailModal> : null}
+            <Modal isOpen={isModalOpen} handleClose={handleCloseModal}>
+                <PlantDetails/>
+            </Modal>
                 <Grid handleOpenPlantDetails={handleOpenPlantDetails} />
             </Column>
             <Column>
