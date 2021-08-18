@@ -1,8 +1,8 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Heading = styled.h1`
-    color: ${({theme}) => theme.green};
-    ${({ upper }) =>
+  color: ${({ theme }) => theme.green};
+  ${({ upper }) =>
     upper &&
     css`
       text-transform: uppercase;

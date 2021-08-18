@@ -9,10 +9,9 @@ export default {
 
 export const Default = () => <Button>enter</Button>;
 
-
 const Template = (args) => <Button {...args}>add new plant</Button>;
 export const Big = Template.bind({});
 
 Big.args = {
-    big: true,
-  };
+  big: true,
+};

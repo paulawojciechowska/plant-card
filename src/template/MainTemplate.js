@@ -5,20 +5,19 @@ import GlobalStyle from 'theme/GlobalStyle';
 import { theme } from 'theme/mainTheme';
 import Navbar from 'components/organisms/Navbar/Navbar';
 
-
-const MainTemplate = ({children}) => (
+const MainTemplate = ({ children }) => (
   <div>
     <GlobalStyle />
     <ThemeProvider theme={theme}>
-        <>
-            <Navbar />
-            {children}
-        </>
+      <>
+        <Navbar />
+        {children}
+      </>
     </ThemeProvider>
   </div>
 );
 
 MainTemplate.propTypes = {
-    children: PropTypes.element.isRequired,
-}
+  children: PropTypes.element.isRequired,
+};
 export default MainTemplate;

@@ -14,38 +14,15 @@ import waterL0 from 'assets/icons/form/waterL_0.svg';
 import waterL1 from 'assets/icons/form/waterL_1.svg';
 
 export const iconsData = {
-    sun: [
-        [
-            sunS0,
-            sunS1,
-        ],
-        [
-            sunM0,
-            sunM1,
-        ],
-        [
-            sunL0,
-            sunL1,
-        ],
-    ],
-    water: [
-        [
-            waterS0,
-            waterS1,
-        ],
-        [
-            waterM0,
-            waterM1,
-        ],
-        [
-            waterL0,
-            waterL1,
-        ],
-    ],
-    mist: [
-        [
-            mist0, 
-            mist1,
-        ]
-    ], 
-}
+  sun: [
+    [sunS0, sunS1],
+    [sunM0, sunM1],
+    [sunL0, sunL1],
+  ],
+  water: [
+    [waterS0, waterS1],
+    [waterM0, waterM1],
+    [waterL0, waterL1],
+  ],
+  mist: [[mist0, mist1]],
+};

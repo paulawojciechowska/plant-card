@@ -9,25 +9,25 @@ import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import Icon from 'assets/icons/exit.svg';
 
 const Text = styled.p`
-    margin: 20px 0 15px 0;
-    text-transform: uppercase;
-    font-size: ${({theme}) => theme.fontSize.m};
-    font-weight: ${({theme}) => theme.bold};
+  margin: 20px 0 15px 0;
+  text-transform: uppercase;
+  font-size: ${({ theme }) => theme.fontSize.m};
+  font-weight: ${({ theme }) => theme.bold};
 `;
-const LoginModal = ({handleClose, isOpen}) => (
-        <ModalWrapper appElement={document.getElementById('root')} isOpen={isOpen} onRequestClose={handleClose}>
-            <ButtonIcon exit icon={Icon} onClick={handleClose} />
-            <Heading>Log In</Heading>
-            <Input placeholder="login"/>
-            <Input placeholder="password"/>
-            <Text>create account</Text>
-            <Button onClick={handleClose}>enter</Button>
-        </ModalWrapper>
+const LoginModal = ({ handleClose, isOpen }) => (
+  <ModalWrapper appElement={document.getElementById('root')} isOpen={isOpen} onRequestClose={handleClose}>
+    <ButtonIcon exit icon={Icon} onClick={handleClose} />
+    <Heading>Log In</Heading>
+    <Input placeholder="login" />
+    <Input placeholder="password" />
+    <Text>create account</Text>
+    <Button onClick={handleClose}>enter</Button>
+  </ModalWrapper>
 );
 
 LoginModal.propTypes = {
-    handleClose: PropTypes.func.isRequired,
-    isOpen: PropTypes.bool.isRequired,
-  };
+  handleClose: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+};
 
 export default LoginModal;

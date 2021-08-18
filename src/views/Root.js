@@ -6,7 +6,6 @@ import Cards from 'views/Cards/Cards';
 import Gallery from 'views/Gallery/Gallery';
 
 const Root = () => (
-  
   <BrowserRouter>
     <MainTemplate>
       <Switch>
@@ -14,7 +13,7 @@ const Root = () => (
         <Route path="/cards" component={Cards} />
         <Route path="/gallery" component={Gallery} />
       </Switch>
-      </MainTemplate>
+    </MainTemplate>
   </BrowserRouter>
 );
 

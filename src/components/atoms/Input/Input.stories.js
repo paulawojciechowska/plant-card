@@ -7,5 +7,5 @@ export default {
   component: Input,
 };
 
-export const Login = () => <Input placeholder="login"/>;
-export const Password = () => <Input placeholder="password"/>;
+export const Login = () => <Input placeholder="login" />;
+export const Password = () => <Input placeholder="password" />;

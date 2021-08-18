@@ -1,16 +1,16 @@
 import styled, { css } from 'styled-components';
 
 const Paragraph = styled.p`
-    color: ${({theme}) => theme.black};
-    font-size: 35px;
-    font-weight: ${({theme}) => theme.bold};
-    margin: 0;
+  color: ${({ theme }) => theme.black};
+  font-size: 35px;
+  font-weight: ${({ theme }) => theme.bold};
+  margin: 0;
 
-    ${({ grey }) =>
+  ${({ grey }) =>
     grey &&
     css`
-      color: ${({theme}) => theme.greyD};
-      font-weight: ${({theme}) => theme.medium};
+      color: ${({ theme }) => theme.greyD};
+      font-weight: ${({ theme }) => theme.medium};
     `}
 `;
 

@@ -6,16 +6,16 @@ import useModal from 'hooks/useModal';
 import { StyledWrapper, StyledHeading } from './Gallery.styles';
 
 const Gallery = () => {
-    // const [isAddPhoto, setAddPhoto] = useState(false);
-    const [isModalOpen, handleOpenModal, handleCloseModal] = useModal();
-    return (
-        <StyledWrapper>
-        <AddPhotoModal isOpen={isModalOpen} handleClose={handleCloseModal} />
-        <StyledHeading upper >track plant grow, collect moments</StyledHeading>
-        <ButtonAdd openModal={handleOpenModal} />
-        <GalleryGrid/>
+  // const [isAddPhoto, setAddPhoto] = useState(false);
+  const [isModalOpen, handleOpenModal, handleCloseModal] = useModal();
+  return (
+    <StyledWrapper>
+      <AddPhotoModal isOpen={isModalOpen} handleClose={handleCloseModal} />
+      <StyledHeading upper>track plant grow, collect moments</StyledHeading>
+      <ButtonAdd openModal={handleOpenModal} />
+      <GalleryGrid />
     </StyledWrapper>
-    )
+  );
 };
 
 export default Gallery;
