@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { ModalBackground } from 'components/molecules/ModalBackground/ModalBackground';
 import { ModalWrapper } from 'components/molecules/ModalWrapper/ModalWrapper';
 import Heading from 'components/atoms/Heading/Heading';
 import Input from 'components/atoms/Input/Input';
@@ -15,9 +14,8 @@ const Text = styled.p`
     font-size: ${({theme}) => theme.fontSize.m};
     font-weight: ${({theme}) => theme.bold};
 `;
-const LoginModal = ({handleClose}) => (
-    <ModalBackground>
-        <ModalWrapper>
+const LoginModal = ({handleClose, isOpen}) => (
+        <ModalWrapper isOpen={isOpen} onRequestClose={handleClose}>
             <ButtonIcon exit icon={Icon} onClick={handleClose} />
             <Heading>Log In</Heading>
             <Input placeholder="login"/>
@@ -25,11 +23,11 @@ const LoginModal = ({handleClose}) => (
             <Text>create account</Text>
             <Button onClick={handleClose}>enter</Button>
         </ModalWrapper>
-    </ModalBackground>
 );
 
 LoginModal.propTypes = {
     handleClose: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
   };
 
 export default LoginModal;

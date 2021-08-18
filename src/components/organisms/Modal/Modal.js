@@ -15,5 +15,4 @@ Modal.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     children: PropTypes.shape.isRequired,
     }
-
  export default Modal;

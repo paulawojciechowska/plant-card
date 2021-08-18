@@ -9,7 +9,7 @@ const Home = () => {
     const [isModalOpen, handleOpenModal, handleCloseModal] = useModal();
     return (
         <StyledWrapper>
-        { isModalOpen && <LoginModal handleClose={handleCloseModal}/> }
+        <LoginModal isOpen={isModalOpen} handleClose={handleCloseModal} />
         <TextWrapper>
             <StyledParagraph>Web application created to help You <Break/> taking care of your plants.</StyledParagraph>
         </TextWrapper>
@@ -20,7 +20,7 @@ const Home = () => {
         <TextWrapper>
             <StyledLink onClick={handleOpenModal}>LOG IN</StyledLink>
         </TextWrapper>
-        <StyledIllustration src={Girl} />
+        { !isModalOpen && <StyledIllustration src={Girl} />}
         <StyledBackground src={Background}/>
     </StyledWrapper>
     )

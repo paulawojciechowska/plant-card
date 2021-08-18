@@ -10,7 +10,7 @@ const Gallery = () => {
     const [isModalOpen, handleOpenModal, handleCloseModal] = useModal();
     return (
         <StyledWrapper>
-        { isModalOpen ? <AddPhotoModal handleClose={handleCloseModal}/> : null }
+        <AddPhotoModal isOpen={isModalOpen} handleClose={handleCloseModal} />
         <StyledHeading upper >track plant grow, collect moments</StyledHeading>
         <ButtonAdd openModal={handleOpenModal} />
         <GalleryGrid/>

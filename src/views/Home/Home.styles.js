@@ -73,6 +73,7 @@ export const StyledLink = styled.a`
     padding-left: 52px;
     font-size: 30px;
     font-weight: ${({theme}) => theme.bold};
+    cursor: pointer;
     z-index: 99999;
 `;
 export const Break = styled.br`

@@ -8,6 +8,7 @@ import Icon from 'assets/icons/leaves.svg';
 const StyledDiv = styled.div`
     display: flex;
     align-items: center;
+    cursor: pointer;
     @media only screen and (max-width: 900px) {
         justify-content: center;
         }
