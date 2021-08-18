@@ -15,7 +15,7 @@ const Text = styled.p`
     font-weight: ${({theme}) => theme.bold};
 `;
 const LoginModal = ({handleClose, isOpen}) => (
-        <ModalWrapper isOpen={isOpen} onRequestClose={handleClose}>
+        <ModalWrapper appElement={document.getElementById('root')} isOpen={isOpen} onRequestClose={handleClose}>
             <ButtonIcon exit icon={Icon} onClick={handleClose} />
             <Heading>Log In</Heading>
             <Input placeholder="login"/>

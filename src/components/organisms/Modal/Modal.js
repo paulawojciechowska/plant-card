@@ -5,7 +5,7 @@ import Icon from 'assets/icons/exit.svg';
 import { ModalWrapper} from './Modal.styles';
 
  const Modal = ({ handleClose, isOpen, children }) =>  (
-    <ModalWrapper isOpen={isOpen} onRequestClose={handleClose}>
+    <ModalWrapper appElement={document.getElementById('root')} isOpen={isOpen} onRequestClose={handleClose}>
         <ButtonIcon exit icon={Icon} onClick={handleClose}/>
         {children}
     </ModalWrapper>

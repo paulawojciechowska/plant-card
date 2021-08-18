@@ -18,7 +18,7 @@ const Text = styled.p`
 `;
 
 const AddPhotoModal = ({ handleClose, isOpen }) => (
-        <ModalWrapper isOpen={isOpen} onRequestClose={handleClose}>
+        <ModalWrapper appElement={document.getElementById('root')} isOpen={isOpen} onRequestClose={handleClose}>
             <ButtonIcon exit icon={Icon} onClick={handleClose}/>
             <Heading>Add photo</Heading>
             <Input placeholder="description" />
