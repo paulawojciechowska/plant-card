@@ -11,6 +11,7 @@ const ButtonIcon = styled.button`
     background-position: 50% 50%;
     background-size: 60%;
     border: none;
+    cursor: pointer;
     ${({ logout }) => logout && css`
       background-color: transparent;
       width: 86px;
@@ -29,6 +30,12 @@ const ButtonIcon = styled.button`
       right: -10px;
       width: 40px;
       height: 40px;
+    `}
+    ${({ form }) =>
+    form &&
+    css`
+      background-color: transparent;
+      background-size: 100%;
     `}
 
 `;

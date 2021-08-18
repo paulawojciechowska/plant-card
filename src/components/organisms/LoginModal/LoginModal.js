@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { ModalBackground } from 'components/molecules/ModalBackground/ModalBackground';
 import { ModalWrapper } from 'components/molecules/ModalWrapper/ModalWrapper';
 import Heading from 'components/atoms/Heading/Heading';
 import Input from 'components/atoms/Input/Input';
@@ -15,22 +14,20 @@ const Text = styled.p`
     font-size: ${({theme}) => theme.fontSize.m};
     font-weight: ${({theme}) => theme.bold};
 `;
-const LoginModal = ({isVisible, setVisibility}) => (
-    <ModalBackground>
-        <ModalWrapper>
-            <ButtonIcon exit icon={Icon} onClick={() => setVisibility(!isVisible)}/>
+const LoginModal = ({handleClose, isOpen}) => (
+        <ModalWrapper appElement={document.getElementById('root')} isOpen={isOpen} onRequestClose={handleClose}>
+            <ButtonIcon exit icon={Icon} onClick={handleClose} />
             <Heading>Log In</Heading>
             <Input placeholder="login"/>
             <Input placeholder="password"/>
             <Text>create account</Text>
-            <Button onClick={() => setVisibility(!isVisible)}>enter</Button>
+            <Button onClick={handleClose}>enter</Button>
         </ModalWrapper>
-    </ModalBackground>
 );
 
 LoginModal.propTypes = {
-    isVisible: PropTypes.bool.isRequired,
-    setVisibility: PropTypes.func.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
   };
 
 export default LoginModal;

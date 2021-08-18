@@ -85,36 +85,42 @@ export const data = [
 
 export const cards = [
     {
+        id: '1',
         image: pilea,
         name: 'pieniążek',
         level: 'mid',
         date: '15/06/19',
     },
     {
+        id: '2',
         image: banana,
         name: 'bananowiec',
         level: 'mid',
         date: '15/06/20',
     },
     {
+        id: '3',
         image: maranta,
         name: 'maranta',
         level: 'hard',
         date: '15/06/19',
     },
     {
+        id: '4',
         image: epipreneum,
         name: 'epipreneum',
         level: 'easy',
         date: '05/09/17',
     },
     {
+        id: '5',
         image: sansiveria,
         name: 'sansiveria',
         level: 'easy',
         date: '15/06/20',
     },
     {
+        id: '6',
         image: maranta,
         name: 'maranta1',
         level: 'hard',
