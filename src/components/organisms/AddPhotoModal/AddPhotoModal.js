@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { ModalBackground } from 'components/molecules/ModalBackground/ModalBackground';
 import { ModalWrapper } from 'components/molecules/ModalWrapper/ModalWrapper';
 import Heading from 'components/atoms/Heading/Heading';
 import Input from 'components/atoms/Input/Input';
@@ -18,20 +17,20 @@ const Text = styled.p`
     font-weight: ${({theme}) => theme.bold};
 `;
 
-const AddPhotoModal = ({ handleClose }) => (
-    <ModalBackground>
-        <ModalWrapper>
+const AddPhotoModal = ({ handleClose, isOpen }) => (
+        <ModalWrapper isOpen={isOpen} onRequestClose={handleClose}>
             <ButtonIcon exit icon={Icon} onClick={handleClose}/>
             <Heading>Add photo</Heading>
-            <Input placeholder="description"/>
-            <Input placeholder="photo url"/>
+            <Input placeholder="description" />
+            <Input placeholder="photo url" />
             <Text> or </Text>
             <AddFile />
             <Button onClick={handleClose}>add</Button>
-        </ModalWrapper>
-    </ModalBackground>
+         </ModalWrapper>
 );
+
 AddPhotoModal.propTypes = {
     handleClose: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
   };
 export default AddPhotoModal;
