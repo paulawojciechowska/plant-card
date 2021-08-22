@@ -20,36 +20,29 @@ export const StyledBackground = styled.img`
   bottom: 0;
   background-size: 100%;
   z-index: -5;
-  @media only screen and (max-width: 914px) {
+  /* @media only screen and (max-width: 914px) {
     display: none;
-  }
+  } */
 `;
 export const StyledIllustration = styled.img`
   position: absolute;
   width: 630px;
   height: 630px;
-  /* width: 50%;
-    height: auto; */
+  bottom: 0;
+  right: 10%;
   background-repeat: no-repeat;
   background-size: cover;
-  right: 100px;
-  bottom: 20px;
   background-size: 100%;
-  z-index: 9999;
+  /* z-index: 9999; */
 
   @media only screen and (max-width: 1200px) {
     width: 580px;
     height: 580px;
-    right: 50px;
-    bottom: 15px;
   }
   @media only screen and (max-width: 914px) {
     width: 550px;
     height: 550px;
-    right: 5px;
-    bottom: 50px;
-    /* position: relative;
-        display: inline-block; */
+    right: 0;
     margin: auto;
   }
   @media only screen and (max-width: 650px) {
