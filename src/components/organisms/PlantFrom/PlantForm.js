@@ -12,6 +12,7 @@ import { PlantContext } from 'providers/PlantProvider';
 // import Icon from 'assets/icons/exit.svg';
 
 const initialFormState = {
+  id: '',
   name: '',
   level: '',
   date: '',
@@ -23,13 +24,18 @@ const initialFormState = {
 
 const Wrapper = styled.div`
   align-items: start;
+  max-height: 90vh;
   /* padding: 25px 60px; */
+`;
+const ButtonWrapper = styled.div`
+  display: flex;
+  margin: auto;
 `;
 const StyledButton = styled(Button)`
   width: 300px;
   margin: 0 auto;
 `;
-const PlantForm = () => {
+const PlantForm = ({ handleClose }) => {
   const [formValues, setFormValues] = useState(initialFormState);
   const { addNewPlant } = useContext(PlantContext);
   // const icons = iconsData.mist;
@@ -41,32 +47,29 @@ const PlantForm = () => {
     });
     console.log(formValues);
   };
-  // const handleRadioChange = (e) => {
-  //   console.log(e.target.value);
-  // }
   const handleSubmitPlant = (e) => {
     e.preventDefault();
+    console.log(formValues);
     addNewPlant(formValues);
     setFormValues(initialFormState);
-    // handleClose();
+    handleClose();
   };
   return (
-    // <ModalBackground>
     <Wrapper as="form" onSubmit={handleSubmitPlant}>
-      {/* <ButtonIcon exit type="button" onClick={handleClose} icon={Icon} /> */}
       <FormField label="name" id="name" name="name" value={formValues.average} onChange={handleInputChange} />
-      <FormField label="care level" id="level" name="level" value={formValues.level} onChange={handleInputChange} />
+      <FormField label="care level" id="level" name="level" placeholder="easy/mid/hard" value={formValues.level} onChange={handleInputChange} />
       <FormField label="arrival date" id="date" name="date" value={formValues.date} onChange={handleInputChange} />
-      {/* <RadioButton name="test" checked={state} type='radio' onChange={handleChange}/> */}
+      <FormField label="image" id="image" name="image" placeholder="paste url" value={formValues.image} onChange={handleInputChange} />
       <RadioForm label="SUN expourse" icons={iconsData.sun} id="sun" name="sun" value={formValues.sun} onChange={handleInputChange} />
-      <RadioForm label="WATER needs" icons={iconsData.water} id="water" name="water" value={formValues.sun} onChange={handleInputChange} />
-      <RadioForm label="MISTING needs" icons={iconsData.mist} id="mist" name="mist" value={formValues.sun} onChange={handleInputChange} />
+      <RadioForm label="WATER needs" icons={iconsData.water} id="water" name="water" value={formValues.water} onChange={handleInputChange} />
+      <RadioForm label="MISTING needs" icons={iconsData.mist} id="mist" name="mist" value={formValues.mist} onChange={handleInputChange} />
       <FormField label="notes" id="notes" name="note" value={formValues.note} onChange={handleInputChange} />
-      <StyledButton type="submit" big>
-        add new plant
-      </StyledButton>
+      <ButtonWrapper>
+        <StyledButton type="submit" big>
+          add new plant
+        </StyledButton>
+      </ButtonWrapper>
     </Wrapper>
-    // </ModalBackground>
   );
 };
 

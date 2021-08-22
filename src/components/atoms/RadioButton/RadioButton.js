@@ -11,7 +11,7 @@ const BackgroundWrapper = styled.label`
   background-image: url(${({ icon }) => icon});
   margin: 0 11px;
 `;
-const RadioButton = ({ icon, name, value }) => {
+const RadioButton = ({ icon, name, value, index }) => {
   const [state, setState] = useState('unchecked');
   const handleChange = (e) => {
     console.log(e.target.value);
@@ -19,7 +19,7 @@ const RadioButton = ({ icon, name, value }) => {
       setState('unchecked');
     } else {
       setState('checked');
-      e.target.value = [icon[1]];
+      e.target.value = [index];
       console.log(e.target.value);
     }
   };

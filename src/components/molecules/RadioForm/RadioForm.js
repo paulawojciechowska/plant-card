@@ -17,8 +17,8 @@ const StyledLabel = styled(Label)`
 const RadioForm = ({ label, icons, id, name, onChange, value }) => (
   <StyledWrapper onChange={onChange}>
     <StyledLabel htmlFor={id}>{label}</StyledLabel>
-    {icons.map((icon) => (
-      <RadioButton icon={icon} name={name} value={value} key={`${id}`} />
+    {icons.map((icon, i) => (
+      <RadioButton index={i} icon={icon} name={name} value={value} key={`${id}`} />
     ))}
   </StyledWrapper>
 );

@@ -10,4 +10,13 @@ export const handlers = [
       })
     );
   }),
+  rest.get('/plants/:id', (req, res, ctx) => {
+    const plant = plants.filter((plant) => plant.id === req.params.id);
+    return res(
+      ctx.status(200),
+      ctx.json({
+        plants: plant,
+      })
+    );
+  }),
 ];
