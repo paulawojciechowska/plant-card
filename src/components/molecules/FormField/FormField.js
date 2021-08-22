@@ -14,10 +14,10 @@ const Wrapper = styled.div`
   }
 `;
 
-const FormField = ({ onChange, value, label, name, id }) => (
+const FormField = ({ onChange, value, label, name, id, placeholder = '' }) => (
   <Wrapper>
     <Label htmlFor={id}>{label}:</Label>
-    <PlantInput name={name} id={id} type="text" value={value} onChange={onChange} />
+    <PlantInput name={name} id={id} type="text" placeholder={placeholder} value={value} onChange={onChange} />
   </Wrapper>
 );
 

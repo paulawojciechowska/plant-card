@@ -21,7 +21,7 @@ const Cards = () => {
     <PlantProvider>
       <>
         <Modal isOpen={isFormOpen} handleClose={handleCloseForm}>
-          <PlantForm />
+          <PlantForm handleClose={handleCloseForm} />
         </Modal>
         <StyledWrapper>
           <Column>
