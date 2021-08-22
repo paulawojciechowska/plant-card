@@ -70,44 +70,52 @@ const IconsWrapper = styled.div`
   align-items: center;
   margin: 5px 0;
 `;
-const PlantDetails = () => (
+const PlantDetails = ({ currentPlant }) => (
   <Wrapper>
     <MainInfoWrapper>
-      <BigImage src={Plant6} />
+      <BigImage src={currentPlant.image} />
       <div>
-        <StyledParagraph title>Plant name</StyledParagraph>
+        <StyledParagraph title>{currentPlant.name}</StyledParagraph>
         <StyledDescription>CARE LEVEL</StyledDescription>
-        <StyledParagraph level activeColor="easy">
-          Easy
+        <StyledParagraph level activeColor={currentPlant.level}>
+          {currentPlant.level}
         </StyledParagraph>
         <StyledDescription>ARRIVE TIME</StyledDescription>
-        <StyledParagraph date>2/03/2020</StyledParagraph>
+        <StyledParagraph date>{currentPlant.date}</StyledParagraph>
       </div>
     </MainInfoWrapper>
     <IconsWrapper>
       <StyledDescription green>SUN expourse</StyledDescription>
-      {iconsData.sun.map((icon) => (
-        <IconWrapper icon={icon[0]} />
-      ))}
+      {iconsData.sun.map((icon, i) => {
+        if (i === currentPlant.sun) {
+          return <IconWrapper icon={icon[1]} />;
+        } else {
+          return <IconWrapper icon={icon[0]} />;
+        }
+      })}
     </IconsWrapper>
     <IconsWrapper>
       <StyledDescription green>WATER needs</StyledDescription>
-      {iconsData.water.map((icon) => (
-        <IconWrapper icon={icon[0]} />
-      ))}
+      {iconsData.water.map((icon, i) => {
+        if (i === currentPlant.water) {
+          return <IconWrapper icon={icon[1]} />;
+        } else {
+          return <IconWrapper icon={icon[0]} />;
+        }
+      })}
     </IconsWrapper>
     <IconsWrapper>
       <StyledDescription green>MISTING need</StyledDescription>
-      {iconsData.mist.map((icon) => (
-        <IconWrapper icon={icon[0]} />
-      ))}
+      {iconsData.mist.map((icon) => {
+        if (currentPlant.mist) {
+          return <IconWrapper icon={icon[1]} />;
+        } else {
+          return <IconWrapper icon={icon[0]} />;
+        }
+      })}
     </IconsWrapper>
     <StyledDescription black>NOTES:</StyledDescription>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
+    <p>{currentPlant.note}</p>
   </Wrapper>
 );
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PlantForm from 'components/organisms/PlantFrom/PlantForm';
 import ButtonAdd from 'components/atoms/ButtonAdd/ButtonAdd';
 import Grid from 'components/organisms/Grid/Grid';
@@ -7,14 +7,18 @@ import cat from 'assets/illustration/cat.svg';
 import Modal from 'components/organisms/Modal/Modal';
 import PlantDetails from 'components/organisms/PlantDetails/PlantDetails';
 import useModal from 'hooks/useModal';
+import { usePlant } from 'hooks/usePlant';
 import { StyledWrapper, Column, TextWrapper, StyledParagraph, StyledImage } from './Cards.styles';
 
 const Cards = () => {
   const [isModalOpen, handleOpenModal, handleCloseModal] = useModal();
   const [isFormOpen, handleOpenForm, handleCloseForm] = useModal();
+  const [currentPlant, setPlant] = useState([]);
+  const { getPlantById } = usePlant();
 
-  const handleOpenPlantDetails = (id) => {
-    console.log(id);
+  const handleOpenPlantDetails = async (id) => {
+    const plant = await getPlantById(id);
+    setPlant(plant);
     handleOpenModal();
   };
   return (
@@ -26,7 +30,7 @@ const Cards = () => {
         <StyledWrapper>
           <Column>
             <Modal isOpen={isModalOpen} handleClose={handleCloseModal}>
-              <PlantDetails />
+              <PlantDetails currentPlant={currentPlant} />
             </Modal>
             <Grid handleOpenPlantDetails={handleOpenPlantDetails} />
           </Column>

@@ -11,6 +11,8 @@ export const plants = [
     sun: 2,
     water: 0,
     mist: 0,
+    note:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
   },
   {
     id: uuidv4(),
@@ -21,6 +23,8 @@ export const plants = [
     sun: 1,
     water: 2,
     mist: 1,
+    note:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
   },
   {
     id: uuidv4(),
@@ -30,7 +34,9 @@ export const plants = [
     date: '15/06/19',
     sun: 1,
     water: 1,
-    mist: 0,
+    mist: 1,
+    note:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
   },
   {
     id: uuidv4(),
@@ -41,6 +47,8 @@ export const plants = [
     sun: 2,
     water: 1,
     mist: 1,
+    note:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
   },
   {
     id: uuidv4(),
@@ -51,6 +59,8 @@ export const plants = [
     sun: 0,
     water: 1,
     mist: 1,
+    note:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
   },
   {
     id: uuidv4(),
@@ -61,6 +71,8 @@ export const plants = [
     sun: 0,
     water: 1,
     mist: 1,
+    note:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
   },
   {
     id: uuidv4(),
@@ -71,15 +83,19 @@ export const plants = [
     sun: 2,
     water: 0,
     mist: 0,
+    note:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
   },
   {
     id: uuidv4(),
-    image: 'https://a.allegroimg.com/original/110ff0/44e4c75c40d0b9ab350501075c3d/Ladna-Maranta-Leuconeura-Fascinator-Tricolor',
-    name: 'maranta1',
-    level: 'hard',
+    image: 'https://florens.pl/wp-content/uploads/2021/03/Ficus-El-Tineke-fikus.jpg',
+    name: 'fikus',
+    level: 'easy',
     date: '15/06/19',
     sun: 0,
     water: 1,
     mist: 1,
+    note:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
   },
 ];
