@@ -12,6 +12,7 @@ import { PlantContext } from 'providers/PlantProvider';
 // import Icon from 'assets/icons/exit.svg';
 
 const initialFormState = {
+  id: '',
   name: '',
   level: '',
   date: '',
@@ -25,6 +26,10 @@ const Wrapper = styled.div`
   align-items: start;
   max-height: 90vh;
   /* padding: 25px 60px; */
+`;
+const ButtonWrapper = styled.div`
+  display: flex;
+  margin: auto;
 `;
 const StyledButton = styled(Button)`
   width: 300px;
@@ -42,9 +47,6 @@ const PlantForm = ({ handleClose }) => {
     });
     console.log(formValues);
   };
-  // const handleRadioChange = (e) => {
-  //   console.log(e.target.value);
-  // }
   const handleSubmitPlant = (e) => {
     e.preventDefault();
     console.log(formValues);
@@ -62,9 +64,11 @@ const PlantForm = ({ handleClose }) => {
       <RadioForm label="WATER needs" icons={iconsData.water} id="water" name="water" value={formValues.water} onChange={handleInputChange} />
       <RadioForm label="MISTING needs" icons={iconsData.mist} id="mist" name="mist" value={formValues.mist} onChange={handleInputChange} />
       <FormField label="notes" id="notes" name="note" value={formValues.note} onChange={handleInputChange} />
-      <StyledButton type="submit" big>
-        add new plant
-      </StyledButton>
+      <ButtonWrapper>
+        <StyledButton type="submit" big>
+          add new plant
+        </StyledButton>
+      </ButtonWrapper>
     </Wrapper>
   );
 };
