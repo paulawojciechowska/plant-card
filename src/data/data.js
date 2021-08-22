@@ -13,11 +13,6 @@ import Plant12 from 'assets/img/gallery/plant12.jpg';
 import Plant13 from 'assets/img/gallery/plant13.jpg';
 import Plant14 from 'assets/img/gallery/plant14.jpg';
 import Plant15 from 'assets/img/gallery/plant15.jpg';
-import pilea from 'assets/img/pilea-peperomioides.jpg';
-import banana from 'assets/img/bananowiec.jpg';
-import maranta from 'assets/img/maranta.jpg';
-import epipreneum from 'assets/img/epipreneum.jpg';
-import sansiveria from 'assets/img/sansiveria.jpg';
 
 export const data = [
   {
@@ -79,50 +74,5 @@ export const data = [
   {
     image: Plant15,
     name: 'monstera',
-  },
-];
-
-export const cards = [
-  {
-    id: '1',
-    image: pilea,
-    name: 'pieniążek',
-    level: 'mid',
-    date: '15/06/19',
-  },
-  {
-    id: '2',
-    image: banana,
-    name: 'bananowiec',
-    level: 'mid',
-    date: '15/06/20',
-  },
-  {
-    id: '3',
-    image: maranta,
-    name: 'maranta',
-    level: 'hard',
-    date: '15/06/19',
-  },
-  {
-    id: '4',
-    image: epipreneum,
-    name: 'epipreneum',
-    level: 'easy',
-    date: '05/09/17',
-  },
-  {
-    id: '5',
-    image: sansiveria,
-    name: 'sansiveria',
-    level: 'easy',
-    date: '15/06/20',
-  },
-  {
-    id: '6',
-    image: maranta,
-    name: 'maranta1',
-    level: 'hard',
-    date: '15/06/19',
   },
 ];
