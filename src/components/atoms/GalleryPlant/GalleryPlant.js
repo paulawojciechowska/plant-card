@@ -10,6 +10,7 @@ const StyledImage = styled.img`
   margin: 50px;
 `;
 const GalleryPlant = ({ plant, alt }) => <StyledImage src={plant} alt={alt} />;
+
 GalleryPlant.propTypes = {
   plant: PropTypes.string.isRequired,
   alt: PropTypes.string,

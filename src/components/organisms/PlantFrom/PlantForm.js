@@ -1,15 +1,9 @@
 import React, { useState, useContext } from 'react';
-import styled from 'styled-components';
-// import { ModalBackground } from 'components/molecules/ModalBackground/ModalBackground';
-// import { ModalWrapper } from 'components/molecules/ModalWrapper/ModalWrapper';
-import Button from 'components/atoms/Button/Button';
-// import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import FormField from 'components/molecules/FormField/FormField';
 import RadioForm from 'components/molecules/RadioForm/RadioForm';
 import { iconsData } from 'data/iconsData';
 import { PlantContext } from 'providers/PlantProvider';
-// import RadioButton from 'components/atoms/RadioButton/RadioButton';
-// import Icon from 'assets/icons/exit.svg';
+import { Wrapper, ButtonWrapper, StyledButton } from './PlantForm.styles';
 
 const initialFormState = {
   id: '',
@@ -22,19 +16,6 @@ const initialFormState = {
   mist: 0,
 };
 
-const Wrapper = styled.div`
-  align-items: start;
-  max-height: 90vh;
-  /* padding: 25px 60px; */
-`;
-const ButtonWrapper = styled.div`
-  display: flex;
-  margin: auto;
-`;
-const StyledButton = styled(Button)`
-  width: 300px;
-  margin: 0 auto;
-`;
 const PlantForm = ({ handleClose }) => {
   const [formValues, setFormValues] = useState(initialFormState);
   const { addNewPlant } = useContext(PlantContext);

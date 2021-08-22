@@ -1,15 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { data as plants } from 'data/data';
 import GalleryPlant from 'components/atoms/GalleryPlant/GalleryPlant';
-
-const StyledWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0 20px;
-`;
+import { StyledWrapper } from './GalleryGrid.styles';
 
 const GalleryGrid = () => (
   <StyledWrapper>

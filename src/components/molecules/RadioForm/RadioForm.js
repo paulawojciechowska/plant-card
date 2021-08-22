@@ -1,19 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Label } from 'components/atoms/Label/Label';
 import RadioButton from 'components/atoms/RadioButton/RadioButton';
+import { StyledWrapper, StyledLabel } from './RadioForm.styled';
 
-const StyledWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-`;
-const StyledLabel = styled(Label)`
-  text-transform: none;
-  width: 160px;
-  /* margin-right: 55px; */
-`;
 const RadioForm = ({ label, icons, id, name, onChange, value }) => (
   <StyledWrapper onChange={onChange}>
     <StyledLabel htmlFor={id}>{label}</StyledLabel>

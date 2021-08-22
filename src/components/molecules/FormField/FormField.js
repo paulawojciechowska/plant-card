@@ -1,18 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { Label } from 'components/atoms/Label/Label';
 import { PlantInput } from 'components/atoms/PlantInput/PlantInput';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* align-items: left; */
-  justify-content: left;
-  ${Label} {
-    margin: 10px 0;
-  }
-`;
+import { Wrapper } from './FormField.styles.js';
 
 const FormField = ({ onChange, value, label, name, id, placeholder = '' }) => (
   <Wrapper>
