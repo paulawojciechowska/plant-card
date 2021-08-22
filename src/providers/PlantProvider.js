@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { cards as cardData } from 'data/data';
 
 export const PlantContext = React.createContext({
   cards: [],
