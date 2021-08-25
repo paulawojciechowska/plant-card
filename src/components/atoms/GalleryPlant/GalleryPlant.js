@@ -9,7 +9,7 @@ const StyledImage = styled.img`
   box-shadow: 5px 5px 5px #ccc;
   margin: 50px;
 `;
-const GalleryPlant = ({ plant, alt }) => <StyledImage src={plant} alt={alt} />;
+const GalleryPlant = ({ plant, alt, handleOpenPhoto }) => <StyledImage src={plant} alt={alt} onClick={() => handleOpenPhoto(plant)} />;
 
 GalleryPlant.propTypes = {
   plant: PropTypes.string.isRequired,
