@@ -8,7 +8,7 @@ const GalleryGrid = ({ handleOpenPhoto }) => {
   return (
     <StyledWrapper>
       {galleryPhotos.map((item, i) => (
-        <GalleryPlant plant={item.image} alt={item.name} handleOpenPhoto={handleOpenPhoto} index={i} />
+        <GalleryPlant key={item.image} plant={item.image} alt={item.name} handleOpenPhoto={handleOpenPhoto} index={i} />
       ))}
     </StyledWrapper>
   );

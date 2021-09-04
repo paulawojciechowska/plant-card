@@ -15,8 +15,8 @@ export const PlantContext = React.createContext({
 const PlantProvider = ({ children }) => {
   const [galleryPhotos, setGalleryPhotos] = useState(plants);
   const [zoomPlant, setZoomPlant] = useState(null);
-  // const [nextPlant, setNextPlant] = useState(null);
-  // const [prevPlant, setPrevPlant] = useState(null);
+  const [nextPlant, setNextPlant] = useState(null);
+  const [prevPlant, setPrevPlant] = useState(null);
   const [cards, setCards] = useState([]);
 
   const addGalleryPhoto = (formValues) => {
@@ -25,10 +25,18 @@ const PlantProvider = ({ children }) => {
   const setZoomPhoto = (index) => {
     setZoomPlant(galleryPhotos[index].image);
   };
-  // const setPhotos = (index) => {
-  //   if (galleryPhotos[index + 1].image) setNextPlant(galleryPhotos[index + 1].image);
-  //   if (galleryPhotos[index - 1].image) setPrevPlant(galleryPhotos[index - 1].image);
-  // };
+  const setPhotos = (index) => {
+    if (index === 0) {
+      setPrevPlant(null);
+    } else {
+      setPrevPlant(index - 1);
+    }
+    if (index === galleryPhotos.length - 1) {
+      setNextPlant(null);
+    } else {
+      setNextPlant(index + 1);
+    }
+  };
   const addNewPlant = (formValues) => {
     setCards([formValues, ...cards]);
   };
@@ -44,7 +52,9 @@ const PlantProvider = ({ children }) => {
         galleryPhotos,
         addGalleryPhoto,
         setZoomPhoto,
-        // setPhotos,
+        setPhotos,
+        nextPlant,
+        prevPlant,
         zoomPlant,
         cards,
         addNewPlant,

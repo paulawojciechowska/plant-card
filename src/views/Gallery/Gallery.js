@@ -11,7 +11,6 @@ const Gallery = () => {
   const [isPhotoOpen, handleOpenPhoto, handleClosePhoto] = useModal();
   const [isModalOpen, handleOpenModal, handleCloseModal] = useModal();
   const { zoomPlant, setZoomPhoto, setPhotos } = useContext(PlantContext);
-  // const [plant, setPlant] = useState(null);
   const handleOpenZoomPhoto = (index) => {
     setZoomPhoto(index);
     handleOpenPhoto();
