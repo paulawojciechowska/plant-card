@@ -4,17 +4,20 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'theme/GlobalStyle';
 import { theme } from 'theme/mainTheme';
 import Navbar from 'components/organisms/Navbar/Navbar';
+import PlantProvider from 'providers/PlantProvider';
 
 const MainTemplate = ({ children }) => (
-  <div>
-    <GlobalStyle />
-    <ThemeProvider theme={theme}>
-      <>
-        <Navbar />
-        {children}
-      </>
-    </ThemeProvider>
-  </div>
+  <PlantProvider>
+    <div>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <>
+          <Navbar />
+          {children}
+        </>
+      </ThemeProvider>
+    </div>
+  </PlantProvider>
 );
 
 MainTemplate.propTypes = {
