@@ -6,17 +6,29 @@ import axios from 'axios';
 export const PlantContext = React.createContext({
   galleryPhotos: [],
   addGalleryPhoto: () => {},
+  setZoomPhoto: () => {},
+  setPhotos: () => {},
   cards: [],
   addNewPlant: () => {},
 });
 
 const PlantProvider = ({ children }) => {
-  const [cards, setCards] = useState([]);
   const [galleryPhotos, setGalleryPhotos] = useState(plants);
+  const [zoomPlant, setZoomPlant] = useState(null);
+  // const [nextPlant, setNextPlant] = useState(null);
+  // const [prevPlant, setPrevPlant] = useState(null);
+  const [cards, setCards] = useState([]);
 
   const addGalleryPhoto = (formValues) => {
     setGalleryPhotos([formValues, ...galleryPhotos]);
   };
+  const setZoomPhoto = (index) => {
+    setZoomPlant(galleryPhotos[index].image);
+  };
+  // const setPhotos = (index) => {
+  //   if (galleryPhotos[index + 1].image) setNextPlant(galleryPhotos[index + 1].image);
+  //   if (galleryPhotos[index - 1].image) setPrevPlant(galleryPhotos[index - 1].image);
+  // };
   const addNewPlant = (formValues) => {
     setCards([formValues, ...cards]);
   };
@@ -31,6 +43,9 @@ const PlantProvider = ({ children }) => {
       value={{
         galleryPhotos,
         addGalleryPhoto,
+        setZoomPhoto,
+        // setPhotos,
+        zoomPlant,
         cards,
         addNewPlant,
       }}
