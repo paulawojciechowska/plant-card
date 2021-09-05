@@ -8,8 +8,11 @@ const StyledImage = styled.img`
   object-fit: cover;
   box-shadow: 5px 5px 5px #ccc;
   margin: 50px;
+  cursor: pointer;
 `;
-const GalleryPlant = ({ plant, alt }) => <StyledImage src={plant} alt={alt} />;
+const GalleryPlant = ({ plant, alt, handleOpenPhoto, index }) => {
+  return <StyledImage src={plant} alt={alt} onClick={() => handleOpenPhoto(index)} />;
+};
 
 GalleryPlant.propTypes = {
   plant: PropTypes.string.isRequired,

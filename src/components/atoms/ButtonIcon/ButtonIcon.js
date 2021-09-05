@@ -39,6 +39,24 @@ const ButtonIcon = styled.button`
       background-color: transparent;
       background-size: 100%;
     `}
+    ${({ arrowL }) =>
+    arrowL &&
+    css`
+      position: absolute;
+      top: 300px;
+      left: -20px;
+      width: 40px;
+      height: 40px;
+    `}
+    ${({ arrowR }) =>
+    arrowR &&
+    css`
+      position: absolute;
+      top: 300px;
+      right: -20px;
+      width: 40px;
+      height: 40px;
+    `}
 `;
 
 export default ButtonIcon;
