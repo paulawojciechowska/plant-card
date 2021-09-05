@@ -10,6 +10,7 @@ export const PlantContext = React.createContext({
   setPhotos: () => {},
   cards: [],
   addNewPlant: () => {},
+  getDetailPlant: () => {},
 });
 
 const PlantProvider = ({ children }) => {
@@ -19,6 +20,12 @@ const PlantProvider = ({ children }) => {
   const [prevPlant, setPrevPlant] = useState(null);
   const [cards, setCards] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get('/plants')
+      .then(({ data }) => setCards(data.plants))
+      .catch((err) => console.log(err));
+  }, []);
   const addGalleryPhoto = (formValues) => {
     setGalleryPhotos([formValues, ...galleryPhotos]);
   };
@@ -39,13 +46,13 @@ const PlantProvider = ({ children }) => {
   };
   const addNewPlant = (formValues) => {
     setCards([formValues, ...cards]);
+    console.log('added plant');
+    console.log(cards);
   };
-  useEffect(() => {
-    axios
-      .get('/plants')
-      .then(({ data }) => setCards(data.plants))
-      .catch((err) => console.log(err));
-  }, []);
+  const getDetailPlant = (index) => {
+    console.log(cards[index]);
+    return cards[index];
+  };
   return (
     <PlantContext.Provider
       value={{
@@ -58,6 +65,7 @@ const PlantProvider = ({ children }) => {
         zoomPlant,
         cards,
         addNewPlant,
+        getDetailPlant,
       }}
     >
       {children}
