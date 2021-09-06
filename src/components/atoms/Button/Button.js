@@ -16,7 +16,7 @@ const Button = styled.button`
   ${({ big }) =>
     big &&
     css`
-      width: 300;
+      width: 300px;
     `}
 `;
 

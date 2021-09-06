@@ -6,7 +6,6 @@ import cat from 'assets/illustration/cat.svg';
 import Modal from 'components/organisms/Modal/Modal';
 import PlantDetails from 'components/organisms/PlantDetails/PlantDetails';
 import useModal from 'hooks/useModal';
-import { usePlant } from 'hooks/usePlant';
 import { PlantContext } from 'providers/PlantProvider';
 import { StyledWrapper, Column, TextWrapper, StyledParagraph, StyledImage } from './Cards.styles';
 
@@ -15,7 +14,6 @@ const Cards = () => {
   const [isFormOpen, handleOpenForm, handleCloseForm] = useModal();
   const [currentPlant, setPlant] = useState([]);
   const { getDetailPlant } = useContext(PlantContext);
-  // const { getPlantById } = usePlant();
 
   const handleOpenPlantDetails = (id) => {
     const plant = getDetailPlant(id);
@@ -29,7 +27,7 @@ const Cards = () => {
       </Modal>
       <StyledWrapper>
         <Column>
-          <Modal isOpen={isModalOpen} handleClose={handleCloseModal}>
+          <Modal plant isOpen={isModalOpen} handleClose={handleCloseModal}>
             <PlantDetails currentPlant={currentPlant} />
           </Modal>
           <Grid handleOpenPlantDetails={handleOpenPlantDetails} />
