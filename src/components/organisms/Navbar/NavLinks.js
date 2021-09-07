@@ -23,11 +23,11 @@ const NavLinks = ({ isOpenNav, closeNav }) => (
     </StyledLi>
     <StyledLi>
       {isOpenNav ? (
-        <StyledHeading exact as={NavLink} to="/" onClick={() => isOpenNav && closeNav(false)} activeclass="active">
+        <StyledHeading exact as={NavLink} to="/logout" onClick={() => isOpenNav && closeNav(false)} activeclass="active">
           Log out
         </StyledHeading>
       ) : (
-        <ButtonIcon logout as={NavLink} to="/" icon={logoutIcon} />
+        <ButtonIcon logout as={NavLink} to="/logout" icon={logoutIcon} />
       )}
     </StyledLi>
   </LinksWrapper>

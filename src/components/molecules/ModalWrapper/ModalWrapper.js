@@ -9,6 +9,7 @@ export const ModalWrapper = styled(ReactModal)`
   background: ${({ theme }) => theme.white};
   width: 100%;
   max-width: 500px;
+  box-shadow: 0px -5px 25px -10px rgba(0, 0, 0, 0.3);
   margin: auto;
   border-radius: 30px;
   padding: 30px;

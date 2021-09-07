@@ -33,7 +33,6 @@ export const StyledIllustration = styled.img`
   background-repeat: no-repeat;
   background-size: cover;
   background-size: 100%;
-  /* z-index: 9999; */
 
   @media only screen and (max-width: 1200px) {
     width: 580px;
@@ -67,7 +66,7 @@ export const StyledLink = styled.a`
   font-size: 30px;
   font-weight: ${({ theme }) => theme.bold};
   cursor: pointer;
-  z-index: 99999;
+  z-index: 999999;
 `;
 export const Break = styled.br`
   @media only screen and (max-width: 550px) {
