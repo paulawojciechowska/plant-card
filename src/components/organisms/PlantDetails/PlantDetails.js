@@ -18,7 +18,7 @@ const PlantDetails = ({ currentPlant }) => (
     <IconsWrapper>
       <StyledDescription green>SUN expourse</StyledDescription>
       {iconsData.sun.map((icon, i) => {
-        if (i === currentPlant.sun) {
+        if (i === parseInt(currentPlant.sun)) {
           return <IconWrapper icon={icon[1]} />;
         } else {
           return <IconWrapper icon={icon[0]} />;
@@ -28,7 +28,7 @@ const PlantDetails = ({ currentPlant }) => (
     <IconsWrapper>
       <StyledDescription green>WATER needs</StyledDescription>
       {iconsData.water.map((icon, i) => {
-        if (i === currentPlant.water) {
+        if (i === parseInt(currentPlant.water)) {
           return <IconWrapper icon={icon[1]} />;
         } else {
           return <IconWrapper icon={icon[0]} />;
