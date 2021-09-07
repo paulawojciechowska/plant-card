@@ -22,7 +22,7 @@ const Home = () => {
       <TextWrapper>
         <StyledLink onClick={handleOpenModal}>LOG IN</StyledLink>
       </TextWrapper>
-      {!isModalOpen && <StyledIllustration src={Girl} />}
+      <StyledIllustration src={Girl} />
       <StyledBackground src={Background} />
     </StyledWrapper>
   );
