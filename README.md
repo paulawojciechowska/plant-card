@@ -6,7 +6,8 @@
 Web app created to collect basic data about taking care of house plants and gather photos to track their growth.<br>
 Basic backend is created using Mock Service Worker, database contains start data to present functionalities.<br>
 Data flow inside app is resolved with react context.<br>
-(vectors used in app are from wonderful -> https://vectorove.com/)
+(vectors used in app are from wonderful -> https://vectorove.com/)<br>
+Live preview: https://plant-card.netlify.app/
 	
 ## Technologies
 * react 17.0.1
